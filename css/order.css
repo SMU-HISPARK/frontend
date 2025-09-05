@@ -1,0 +1,149 @@
+*{
+    margin:0;padding:0;
+    box-sizing:border-box;
+    font-family: 'Pretendard';
+    color:#1a1a1a;
+}
+
+ol,ul{list-style: none;}
+body{
+    width:100%;height:100%;
+}
+.mainBox{
+    min-width:500px;
+    max-width:900px;
+    height:1000px; border:1px solid #ccc; margin:0 auto;
+    background-color: #fafafa;
+}
+.ordertitle{
+    width:100%;height:65px;
+    display:flex;align-items:center;justify-content:center;
+    color:#fafafa;background-color: #1a1a1a;
+    font-size:20px; font-weight: 700;
+}
+.title{
+    background-color: white;
+    position:relative;
+    padding:16px 0;
+    width:100%;height:60px;
+}
+h1{
+    margin: 0 95px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.hMenu{
+    position:absolute;
+    top:50%;
+    margin-top: -14px;
+}
+
+.hLeft{
+    left: 0;
+    margin-left:10px;
+}
+
+.hRight{
+    width:65px;
+    right:0;
+    margin-right:20px;
+    display: flex;
+    justify-content:space-between;
+}
+
+.addressBox,.orderProduct{
+    width:100%;
+    border-bottom:1px solid #ccc;
+    background-color: white;
+    padding: 0 20px;
+}
+
+
+summary {
+    width:100%;
+    height:67px;
+    padding: 20px 0;
+    list-style: none;
+    text-align: left;
+    position: relative;
+}
+
+summary::marker {
+    display: none;
+}
+
+summary::after {
+    content: "";
+    background: url('../images/arrow-up.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+details:not([open]) summary::after {
+    content: "";
+    background: url('../images/arrow-down.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+#acceptant, #address1, #address2{
+    width: 100%;
+}
+
+input[type="text"], select{
+    height: 42px;
+    padding: 10px 11px 10px 10px;
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #1a1a1a;
+    font-weight: 400;
+    line-height: 14px;
+    
+}
+
+table{
+    width:100%;
+    margin-bottom:20px;
+}
+
+.phone-input{width:42px;}
+
+.inputBox{padding:5px 0;}
+
+.inputBox li{margin-bottom:10px 0;}
+
+.phone-group,.email-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.phone-group select, .phone-group input[type="text"]{width:32%;}
+
+.phone-group span, .email-group span{line-height: 40px;}
+
+
+.email-input,.domain-select{width:48%;}
+
+#deliveryMessage{
+    width:750px;
+}
+
+.orderProduct{
+    margin-top:20px;
+}
+

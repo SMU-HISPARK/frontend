@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="css/cart.css" />
+    <link rel="stylesheet" href="css/base.css" />
+</head>
+<body>
+	<div id="header">
+		
+		<div id="snbBox">
+			<h1><img src="images/hispark_crop.png" alt="(로고)" /></h1>
+			<div id="snb">
+				<ul>
+					<li><a href="#">로그인</a></li>
+					<li><a href="#">회원가입</a></li>
+					<li><a href="#">메인으로</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+    
+
+
+    <div class="mainBox">
+        <div class="location">
+            <ul>
+                <li>홈</li>
+                <li class="current">장바구니</li>
+            </ul>
+        </div>
+        <div class="title">장바구니</div>
+        <div class="orderStep">
+            <ul>
+                <li>1. 장바구니</li>
+                <li>2. 주문서작성</li>
+                <li>3. 주문완료</li>
+            </ul>
+        </div>
+        
+        <div class="mainBox">
+            <div class="pricebasketbox">
+                <div class="basketbox">
+                    <div class="basket">
+                        <table class="product-container">
+                            <tr>
+                                <td rowspan="5" class="checkbox-cell">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="pd_img">
+                                    <a>
+                                        <img />
+                                    </a>
+                                </td>
+                                <td class="product">
+                                    <div class="description">
+                                        <strong>BAMBI BIRTHDAY KIT</strong>
+                                        <br>
+                                        17,000원
+                                        <br>
+                                        배송: 3,000원
+                                    </div>
+                                    <div class="delete-btn">×</div>
+                                </td>
+                            </tr>
+                            <tr style="height:20px;"></tr>
+                            <tr>
+                                <td colspan="2" class="optionselect">
+                                    ㄴ 옵션 선택사항: BAMBI
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="countselect">
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn">-</button>
+                                        <input type="text" class="quantity-input" value="1" min="1" />
+                                        <button class="quantity-btn">+</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="productprice">17,000원</td>
+                            </tr>
+                        </table>
+                        
+                        <table class="product-container">
+                            <tr>
+                                <td rowspan="5" class="checkbox-cell">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="pd_img">
+                                    <a>
+                                        <img />
+                                    </a>
+                                </td>
+                                <td class="product">
+                                    <div class="description">
+                                        <strong>BAMBI BIRTHDAY KIT</strong>
+                                        <br>
+                                        17,000원
+                                        <br>
+                                        배송: 3,000원
+                                    </div>
+                                    <div class="delete-btn">×</div>
+                                </td>
+                            </tr>
+                            <tr style="height:20px;"></tr>
+                            <tr>
+                                <td colspan="2" class="optionselect">
+                                    ㄴ 옵션 선택사항: BAMBI
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="countselect">
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn">-</button>
+                                        <input type="text" class="quantity-input" value="1" min="1" />
+                                        <button class="quantity-btn">+</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="productprice">17,000원</td>
+                            </tr>
+                        </table>
+                        
+                        <!-- 두 번째 상품 -->
+                        <table class="product-container">
+                            <tr>
+                                <td rowspan="5" class="checkbox-cell">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="pd_img">
+                                    <a>
+                                        <img />
+                                    </a>
+                                </td>
+                                <td class="product">
+                                    <div class="description">
+                                        <strong>HELLO KITTY PLANNER</strong>
+                                        <br>
+                                        25,000원
+                                        <br>
+                                        배송: 무료배송
+                                    </div>
+                                    <div class="delete-btn">×</div>
+                                </td>
+                            </tr>
+                            <tr style="height:20px;"></tr>
+                            <tr>
+                                <td colspan="2" class="optionselect">
+                                    ㄴ 옵션 선택사항: 핑크색
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="countselect">
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn">-</button>
+                                        <input type="text" class="quantity-input" value="2" min="1" />
+                                        <button class="quantity-btn">+</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="productprice">50,000원</td>
+                            </tr>
+                        </table>
+                        
+                        <!-- 전체 합계 (모든 상품 아래 하나만) -->
+                        <table style="margin-top: 20px; width: 100%;">
+                            <tr class="pricesum">
+                                <td>
+                                    [기본배송]<br>
+                                    상품구매금액 67,000원 + 배송비 3,000원<br>
+                                    합계 : 70,000원
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="right-section">
+                    <div class="pricecount">
+                        <div class="productprice-sum">
+                            <div>상품가격</div>
+                            <div>67,000원</div>
+                        </div>
+                        <div class="productprice-sum">
+                            <div>배송비</div>
+                            <div>3,000원</div>
+                        </div>
+                        <div class="productprice-total">
+                            <div>총합</div>
+                            <div>70,000원</div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-buttons">
+                        <button class="btn order-btn">선택 주문하기</button>
+                        <button class="btn order-btn">전체 주문하기</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn">전체선택</button>
+                <button class="btn">선택삭제</button>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div id="footerWrap">
+		<div id="footer">
+			
+			<div id="finfo">
+				<div id="flogo"><img src="images/hispark.png" alt="하이스파크 로고" /></div>
+				<address>
+					<ul>
+						<li>㈜스파크</li>
+						<li>대표자 김슬비</li>
+						<li class="tnone">주소 서울시 용산구 독서당로 111(한남더힐)</li>
+						<li class="webnone">소비자상담실 02)123-4567</li>
+						<li>사업자등록번호 012-345-6789</li>
+						<li class="tnone">통신판매신고 제 강남 – 1160호</li>
+						<li class="copy">COPYRIGHT © 2025 HI-SPARK <span>ALL RIGHTS RESERVED.</span></li>
+					</ul>
+				</address>
+
+			</div>
+            <div class="social-links">
+                <a href="https://www.youtube.com/user/smtown/" class="youtube-button" target="_blank" rel="noopener noreferrer"></a>
+                <a href="https://www.instagram.com/hispark__official/" class="instagram-button" target="_blank" rel="noopener noreferrer"></a>
+                <a href="https://twitter.com/hispark5/" class="x-button" target="_blank" rel="noopener noreferrer"></a>
+                <a href="https://www.facebook.com/smtown/" class="facebook-button" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+		</div>
+	</div>
+
+    <script>
+        // 수량 조절 기능
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('quantity-btn')) {
+                const btn = e.target;
+                const input = btn.parentElement.querySelector('.quantity-input');
+                const currentValue = parseInt(input.value);
+                
+                if (btn.textContent === '+') {
+                    input.value = currentValue + 1;
+                } else if (btn.textContent === '-' && currentValue > 1) {
+                    input.value = currentValue - 1;
+                }
+                
+                // 가격 업데이트 (실제 구현시 필요)
+                updatePrice();
+            }
+        });
+        
+        // 체크박스 전체선택 기능
+        document.querySelector('.action-buttons').addEventListener('click', function(e) {
+            if (e.target.textContent === '전체선택') {
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+                
+                checkboxes.forEach(cb => {
+                    cb.checked = !allChecked;
+                });
+                
+                e.target.textContent = allChecked ? '전체선택' : '전체해제';
+            }
+        });
+        
+        function updatePrice() {
+            // 실제 가격 계산 로직은 여기에 구현
+            console.log('가격 업데이트');
+        }
+    </script>
+</body>
+</html>

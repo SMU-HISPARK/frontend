@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문/결제</title>
+    <link rel="stylesheet" href="css/order.css" />
+</head>
+<body>
+    <div class="mainBox">
+        <div class="title">
+            
+            <h1>SPARK SHOP</h1>
+            <div class="hMenu hLeft">
+                <a href="/"><img src="images/left.png" style="width:28px;" /></a>
+            </div>
+            <div class="hMenu hRight">
+                <a href="/"><img src="images/user3.png" style="width:28px" /></a>
+                <a href="/"><img src="images/homewhite.png" style="width:28px;" /></a>
+            </div>
+        </div>
+        <div class="ordertitle">
+            주문 / 결제
+        </div>
+
+        <div class="addressBox">
+            <details open>
+                <summary>배송지</summary>
+                <div>
+
+                    <table>
+                        <colgroup>
+                            <col width="102px">
+                            <col width="*">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="label">받는사람 <span class="required">*</span></td>
+                                <td class="inputBox"><input type="text" id="acceptant" name="acceptant"/></td>
+                            </tr>
+                            <tr>
+                                <td class="label">주소 <span class="required">*</span></td>
+                                <td class="inputBox">
+                                    <ul>
+                                        <li>
+                                            <div style="margin-bottom: 10px;">
+                                                <input type="text" placeholder="우편번호" style="width: 160px;" name="zipcode" />
+                                                <button type="button">주소검색</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div style="margin-bottom: 10px;">
+                                                <input type="text" placeholder="기본주소"  id="address2" name="address1" />
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <input type="text" placeholder="나머지 주소(선택 입력 가능)" id="address2" name="address2" />
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label">휴대전화 <span class="required">*</span></td>
+                                <td class="inputBox">
+                                    <div class="phone-group">
+                                        <select>
+                                            <option>010</option>
+                                            <option>011</option>
+                                            <option>016</option>
+                                            <option>017</option>
+                                            <option>018</option>
+                                            <option>019</option>
+                                        </select>
+                                        <span>-</span>
+                                        <input type="text" class="phone-input" />
+                                        <span>-</span>
+                                        <input type="text" class="phone-input" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label">이메일 <span class="required">*</span></td>
+                                <td class="inputBox">
+                                    <div class="email-group">
+                                        <input type="text" class="email-input" />
+                                        <span>@</span>
+                                        <select class="domain-select">
+                                            <option>직접입력</option>
+                                            <option>naver.com</option>
+                                            <option>gmail.com</option>
+                                            <option>daum.net</option>
+                                            <option>hotmail.com</option>
+                                            <option>yahoo.co.kr</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label">배송메세지</td>
+                                <td class="inputBox">
+                                    <div class="messageBox">
+                                        <select id="deliveryMessage">
+                                            <option>-- 메시지 선택 (선택사항) --</option>
+                                            <option>배송 전 연락 바랍니다</option>
+                                            <option>부재 시 경비실에 맡겨주세요</option>
+                                            <option>부재 시 문 앞에 놓아주세요</option>
+                                            <option>파손의 위험이 있는 상품입니다. 배송 시 주의해 주세요</option>
+                                            <option>직접입력</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </details>
+            
+        </div>
+
+        <div class="orderProduct">
+            <details open>
+                <summary>주문상품</summary>
+                
+
+            </details>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
