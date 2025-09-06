@@ -87,15 +87,15 @@ div {
 .orderStep li {
     display: inline-block;
     text-decoration: none;
-    margin: 10px;
     padding: 10px 20px;
+    margin-bottom: 10px;
     font-size: 14px;
 }
+
 
 .pricebasketbox {
     display: flex;
     gap: 50px;
-    background-color: #fafafa;
 }
 
 .basketbox {
@@ -132,6 +132,9 @@ div {
     padding-left:20px;
 }
 
+.description span{
+    color:#a0a0a0;
+}
 
 .countselect {
     text-align: right;
@@ -152,14 +155,19 @@ div {
     font-weight: bold;
 }
 
+.titleTd{
+    padding: 10px 0 30px;
+}
+
+
+
 .pricesum {
     background-color: #f9f9f9;
+    font-size: 14px;
 }
 
 .pricesum td {
-    padding: 15px;
-    text-align: center;
-    font-weight: bold;
+    padding: 20px;
 }
 
 .pricecount {
@@ -214,6 +222,10 @@ input[type="checkbox"]:checked{
     border: 1px solid #d9d9d9;
 }
 
+.quantity-title{
+    color:#a0a0a0;
+}
+
 .quantity-control {
     display: flex;
     align-items: center;
@@ -226,10 +238,7 @@ input[type="checkbox"]:checked{
     background: white;
     width: 36px;
     height: 36px;
-    border-top:1px solid #ccc;
-    border-bottom:1px solid #ccc;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    border:1px solid #ccc;
 }
 
 .quantity-input {
@@ -251,7 +260,7 @@ input[type="checkbox"]:checked{
 }
 
 .btn {
-    border: 1px solid #1a1a1a;
+    border: 1px solid #ccc;
     padding: 10px 20px;
     cursor: pointer;
     background: white;
@@ -278,11 +287,26 @@ input[type="checkbox"]:checked{
     justify-content: space-between;
     margin-top:20px;
     padding-top:20px;
-    border-top:1px solid #ccc
-
+    border-top:1px solid #ccc;
+    font-weight:bold;
 }
 
 .order-btn{
     width:360px;
     margin-top: 10px;
+}
+
+.orderAll{
+    color:#fafafa;
+    border:#1a1a1a;
+    background-color: #1a1a1a;
+}
+
+.empty-cart {
+    text-align: center;
+    height:300px;
+    padding: 50px 20px;
+    color: #666;
+    font-size: 18px;
+    margin: 20px 0;
 }

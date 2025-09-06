@@ -6,6 +6,7 @@
     <title>장바구니</title>
     <link rel="stylesheet" href="css/cart.css" />
     <link rel="stylesheet" href="css/base.css" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -41,10 +42,11 @@
             </ul>
         </div>
         
-        <div class="mainBox">
+        <div class="cart-content">
             <div class="pricebasketbox">
                 <div class="basketbox">
                     <div class="basket">
+                        <!--상품당 table 하나-->
                         <table class="product-container">
                             <tr>
                                 <td rowspan="5" class="checkbox-cell">
@@ -61,9 +63,12 @@
                                         <br>
                                         17,000원
                                         <br>
-                                        배송: 3,000원
+                                        <br>
+                                        <span>배송: 3,000원</span>
                                     </div>
-                                    <div class="delete-btn">×</div>
+                                    <div class="delete-btn">
+                                        <img src="images/closebtn.png" width="20px"/>
+                                    </div>
                                 </td>
                             </tr>
                             <tr style="height:20px;"></tr>
@@ -73,7 +78,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2" class="countselect">
+                                <td class="quantity-title">수량</td>
+                                <td class="countselect">
                                     <div class="quantity-control">
                                         <button class="quantity-btn">-</button>
                                         <input type="text" class="quantity-input" value="1" min="1" />
@@ -82,52 +88,59 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2" class="productprice">17,000원</td>
+                                <td class="titleTd">주문금액</td>
+                                <td class="productprice">17,000원</td>
                             </tr>
                         </table>
-                        
-                        <table class="product-container">
-                            <tr>
-                                <td rowspan="5" class="checkbox-cell">
-                                    <input type="checkbox">
-                                </td>
-                                <td class="pd_img">
-                                    <a>
-                                        <img />
-                                    </a>
-                                </td>
-                                <td class="product">
-                                    <div class="description">
-                                        <strong>BAMBI BIRTHDAY KIT</strong>
-                                        <br>
-                                        17,000원
-                                        <br>
-                                        배송: 3,000원
-                                    </div>
-                                    <div class="delete-btn">×</div>
-                                </td>
-                            </tr>
-                            <tr style="height:20px;"></tr>
-                            <tr>
-                                <td colspan="2" class="optionselect">
-                                    ㄴ 옵션 선택사항: BAMBI
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="countselect">
-                                    <div class="quantity-control">
-                                        <button class="quantity-btn">-</button>
-                                        <input type="text" class="quantity-input" value="1" min="1" />
-                                        <button class="quantity-btn">+</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="productprice">17,000원</td>
-                            </tr>
-                        </table>
-                        
+
                         <!-- 두 번째 상품 -->
+                        <table class="product-container">
+                            <tr>
+                                <td rowspan="5" class="checkbox-cell">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="pd_img">
+                                    <a>
+                                        <img />
+                                    </a>
+                                </td>
+                                <td class="product">
+                                    <div class="description">
+                                        <strong>YEJUN BIRTHDAY KIT</strong>
+                                        <br>
+                                        17,000원
+                                        <br>
+                                        <br>
+                                        <span>배송: 3,000원</span>
+                                    </div>
+                                    <div class="delete-btn">
+                                        <img src="images/closebtn.png" width="20px"/>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="height:20px;"></tr>
+                            <tr>
+                                <td colspan="2" class="optionselect">
+                                    ㄴ 옵션 선택사항: YEJUN
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="quantity-title">수량</td>
+                                <td class="countselect">
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn">-</button>
+                                        <input type="text" class="quantity-input" value="1" min="1" />
+                                        <button class="quantity-btn">+</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="titleTd">주문금액</td>
+                                <td class="productprice">17,000원</td>
+                            </tr>
+                        </table>
+                        
+                        <!-- 세 번째 상품 -->
                         <table class="product-container">
                             <tr>
                                 <td rowspan="5" class="checkbox-cell">
@@ -144,9 +157,12 @@
                                         <br>
                                         25,000원
                                         <br>
-                                        배송: 무료배송
+                                        <br>
+                                        <span>배송: 무료배송</span>
                                     </div>
-                                    <div class="delete-btn">×</div>
+                                    <div class="delete-btn">
+                                        <img src="images/closebtn.png" width="20px"/>
+                                    </div>
                                 </td>
                             </tr>
                             <tr style="height:20px;"></tr>
@@ -156,7 +172,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2" class="countselect">
+                                <td class="quantity-title">수량</td>
+                                <td class="countselect">
                                     <div class="quantity-control">
                                         <button class="quantity-btn">-</button>
                                         <input type="text" class="quantity-input" value="2" min="1" />
@@ -165,7 +182,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2" class="productprice">50,000원</td>
+                                <td class="titleTd">주문금액</td>
+                                <td class="productprice">25,000원</td>
                             </tr>
                         </table>
                         
@@ -174,7 +192,7 @@
                             <tr class="pricesum">
                                 <td>
                                     [기본배송]<br>
-                                    상품구매금액 67,000원 + 배송비 3,000원<br>
+                                    상품구매금액 67,000 + 배송비 3,000<br>
                                     합계 : 70,000원
                                 </td>
                             </tr>
@@ -185,7 +203,7 @@
                 <div class="right-section">
                     <div class="pricecount">
                         <div class="productprice-sum">
-                            <div>상품가격</div>
+                            <div>상품구매금액</div>
                             <div>67,000원</div>
                         </div>
                         <div class="productprice-sum">
@@ -193,21 +211,21 @@
                             <div>3,000원</div>
                         </div>
                         <div class="productprice-total">
-                            <div>총합</div>
+                            <div>합계</div>
                             <div>70,000원</div>
                         </div>
                     </div>
                     
                     <div class="order-buttons">
                         <button class="btn order-btn">선택 주문하기</button>
-                        <button class="btn order-btn">전체 주문하기</button>
+                        <button class="btn order-btn orderAll">전체 주문하기</button>
                     </div>
                 </div>
             </div>
             
             <div class="action-buttons">
-                <button class="btn">전체선택</button>
-                <button class="btn">선택삭제</button>
+                <button class="btn selectAll">전체선택</button>
+                <button class="btn deleteSelected">선택삭제</button>
             </div>
         </div>
     </div>
@@ -242,40 +260,73 @@
 	</div>
 
     <script>
-        // 수량 조절 기능
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('quantity-btn')) {
-                const btn = e.target;
-                const input = btn.parentElement.querySelector('.quantity-input');
-                const currentValue = parseInt(input.value);
-                
-                if (btn.textContent === '+') {
-                    input.value = currentValue + 1;
-                } else if (btn.textContent === '-' && currentValue > 1) {
-                    input.value = currentValue - 1;
-                }
-                
-                // 가격 업데이트 (실제 구현시 필요)
-                updatePrice();
-            }
-        });
+        // 품목 삭제 버튼
+        $(document).on("click",".delete-btn",function(){
+            
+            //가장 가까운 product-container 위치 변수 선언
+            var productContainer = $(this).closest('.product-container');
+            
+            productContainer.remove(); //해당 컨테이너 삭제
+            checkCartEmpty();//장바구니가 비어있는지 확인
+            updatePrice();// 가격 업데이트
+            
+        });//delete-btn
         
-        // 체크박스 전체선택 기능
-        document.querySelector('.action-buttons').addEventListener('click', function(e) {
-            if (e.target.textContent === '전체선택') {
-                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-                const allChecked = Array.from(checkboxes).every(cb => cb.checked);
-                
-                checkboxes.forEach(cb => {
-                    cb.checked = !allChecked;
-                });
-                
-                e.target.textContent = allChecked ? '전체선택' : '전체해제';
+        
+        // 수량 조절 버튼
+        $(document).on("click", ".quantity-btn", function(){
+            var input = $(this).siblings('.quantity-input');  // 같은 레벨의 input 찾기
+            var currentValue = parseInt(input.val());          // 현재 값 가져오기
+            
+            if ($(this).text() == '+') {
+                input.val(currentValue + 1);
+            } else if ($(this).text() == '-' && currentValue > 1) {
+                input.val(currentValue - 1);
             }
-        });
+        });//quantity-btn
+        
+        // 전체선택 버튼
+        $(document).on("click", ".selectAll", function(){
+            var checkBoxes = $('input[type="checkbox"]');     // 모든 체크박스 선택
+            var allChecked = checkBoxes.filter(':checked').length == checkBoxes.length;  // 모두 체크되었나 확인
+            
+            checkBoxes.prop('checked', !allChecked); // 모두 체크되어있으면 체크 해제하기 
+            if (allChecked) {
+                $(this).text("전체선택");
+            } else {
+                $(this).text("선택해제");
+            }
+        });//selectall
+        
+        //선택삭제
+        $(document).on("click",".deleteSelected", function(){
+            var checkedBoxes = $('input[type="checkbox"]:checked');
+            checkedBoxes.each(function(){
+                $(this).closest('.product-container').remove();
+            });
+            
+            checkCartEmpty();//장바구니가 비어있는지 확인
+            updatePrice();// 가격 업데이트
+
+        });//deleteSelected
+        
+        
+
+        //장바구니 비어있는지 확인하는 함수
+        function checkCartEmpty(){
+            //장바구니 내 상품 개수 확인
+            var productCount = $(".product-container").length;
+
+            //상품 0개일 때 상품이 없습니다 html 변경
+            if(productCount==0){
+                $(".cart-content").html('<div class="empty-cart">상품이 없습니다</div>');
+            }
+        }//checkCartEmpty
+
+
         
         function updatePrice() {
-            // 실제 가격 계산 로직은 여기에 구현
+            // 실제 가격 계산 로직 구현
             console.log('가격 업데이트');
         }
     </script>
