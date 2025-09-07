@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/mypage.css">
+    <title>커뮤니티</title>
+    <style>
+        /* ===================== 버튼 ===================== */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 12px 5px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #3399FF, #1E90FF);
+            color: #fff;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+
+        .btn-small { 
+            padding: 6px 12px; 
+            font-size: 12px; 
+            margin: 5px 2px;
+        }
+
+        /* ===================== 탭 및 컨텐츠 ===================== */
+
+
+        .community-tab h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #004080;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background: #E0F7FF;
+            border: 1px solid #3399FF;
+            border-radius: 10px;
+        }
+
+        /* 게시글 리스트 */
+        .post-list {
+            margin-top: 20px;
+        }
+
+        .post-item {
+            background: #E0F7FF;
+            border: 2px solid #3399FF;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .post-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #004080;
+        }
+
+        .post-date {
+            font-size: 12px;
+            color: #0066cc;
+            font-weight: 500;
+        }
+
+        .post-content {
+            color: #003366;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(255, 249, 249, 0.514);
+            border-radius: 10px;
+        }
+
+        .post-actions {
+            text-align: right;
+        }
+
+        .post-actions .btn {
+            margin-left: 5px;
+        }
+
+        /* 반응형 처리 */
+        @media (max-width: 768px) {
+            .main-layout {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .sidebar {
+                width: 100%;
+            }
+            
+            .post-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .post-actions {
+                text-align: center;
+            }
+            
+            #snb {
+                padding-right: 20px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="wrap">
+        <div id="header">
+            <div id="snbBox">
+                <div id="snb">
+                        <a href="#"><img src = "/images/home.png"></a>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="container">
+
+        
+        <div class="main-layout">
+
+            <div class="sidebar">
+                    <!-- 프로필 카드 -->
+                    <div class="profile-card">
+                        <div class="profile-pic">
+                            <img src="/images/school.png" alt="프로필사진">
+                        </div>
+                        <div class="profile-info">
+                            <div class="profile-name">♡ 홍길동 ♡</div>
+                        </div>
+                    </div>
+            <div class="navigation">
+                <div class="nav-item"><a href = "mymember.html">♪ 회원정보</a></div>
+                <div class="nav-item"><a href = "myclub.html">♬ 가입 동아리</a></div>
+                <div class="nav-item active">♫ 게시글 관리</div>
+                <div class="nav-item"><a href = "myshop.html">♩ 주문내역</a></div>
+            </div>
+        </div>
+        <div class="content">
+            <h2>게시글 관리</h2>
+            <div class="tab-buttons">
+                <button class="btn active" id="postBtn" onclick="showCommunityTab('posts')">게시글</button>
+                <button class="btn" id="commentBtn" onclick="showCommunityTab('comments')">댓글</button>
+            </div>
+            
+            <!-- 게시글 탭 -->
+            <div id="posts-tab" class="community-tab">
+                <div class="post-list">
+                    <div class="post-item">
+                        <div class="post-header">
+                            <div class="post-title">오늘 콘서트 정말 최고였어요!</div>
+                            <div class="post-date">2025-08-30</div>
+                        </div>
+                        <div class="post-content">
+                            어제 공연 정말 감동적이었습니다. 특히 앵콜 무대에서의 퍼포먼스가...
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn btn-small" onclick="editPost(1)">수정</button>
+                            <button class="btn btn-small" onclick="deletePost(1)">삭제</button>
+                            <button class="btn btn-small" onclick="viewPost(1)">보기</button>
+                        </div>
+                    </div>
+                    
+                    <div class="post-item">
+                        <div class="post-header">
+                            <div class="post-title">굿즈 후기 남겨요</div>
+                            <div class="post-date">2025-08-28</div>
+                        </div>
+                        <div class="post-content">
+                            이번에 구매한 포토카드 퀄리티가 정말 좋네요. 배송도 빠르고...
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn btn-small" onclick="editPost(2)">수정</button>
+                            <button class="btn btn-small" onclick="deletePost(2)">삭제</button>
+                            <button class="btn btn-small" onclick="viewPost(2)">보기</button>
+                        </div>
+                    </div>
+                    
+                    <div class="post-item">
+                        <div class="post-header">
+                            <div class="post-title">이번 앨범 어떻게 생각하세요?</div>
+                            <div class="post-date">2025-08-26</div>
+                        </div>
+                        <div class="post-content">
+                            신곡들이 다 너무 좋은데 특히 타이틀곡이 중독성이 있어서...
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn btn-small" onclick="editPost(3)">수정</button>
+                            <button class="btn btn-small" onclick="deletePost(3)">삭제</button>
+                            <button class="btn btn-small" onclick="viewPost(3)">보기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 댓글 탭 -->
+            <div id="comments-tab" class="community-tab" style="display: none;">
+                <div class="post-list">
+                    <div class="post-item">
+                        <div class="post-header">
+                            <div class="post-title">"신곡 발매 소식!" 게시글에 댓글</div>
+                            <div class="post-date">2025-08-29</div>
+                        </div>
+                        <div class="post-content">
+                            "드디어 나왔네요! 기대했던 만큼 좋은 것 같아요"
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn btn-small" onclick="viewOriginalPost(1)">원글 보기</button>
+                        </div>
+                    </div>
+                    
+                    <div class="post-item">
+                        <div class="post-header">
+                            <div class="post-title">"콘서트 후기" 게시글에 댓글</div>
+                            <div class="post-date">2025-08-27</div>
+                        </div>
+                        <div class="post-content">
+                            "저도 같은 생각이에요! 정말 최고의 무대였습니다 ㅠㅠ"
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn btn-small" onclick="viewOriginalPost(2)">원글 보기</button>
+                        </div>
+                    </div>
+                    
+                    <div class="post-item">
+                        <div class="post-header">
+                            <div class="post-title">"굿즈 추천해주세요" 게시글에 댓글</div>
+                            <div class="post-date">2025-08-25</div>
+                        </div>
+                        <div class="post-content">
+                            "포토카드 세트 추천드려요! 퀄리티 정말 좋아요"
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn btn-small" onclick="viewOriginalPost(3)">원글 보기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <script>
+        // 커뮤니티 탭 전환 함수
+        function showCommunityTab(tabName) {
+            // 모든 탭 숨기기
+            document.getElementById('posts-tab').style.display = 'none';
+            document.getElementById('comments-tab').style.display = 'none';
+            
+            // 모든 탭 버튼 비활성화
+            document.getElementById('postBtn').classList.remove('active');
+            document.getElementById('commentBtn').classList.remove('active');
+            
+            // 선택된 탭 보이기
+            if (tabName === 'posts') {
+                document.getElementById('posts-tab').style.display = 'block';
+                document.getElementById('postBtn').classList.add('active');
+            } else if (tabName === 'comments') {
+                document.getElementById('comments-tab').style.display = 'block';
+                document.getElementById('commentBtn').classList.add('active');
+            }
+        }
+        
+        // 게시글 관련 함수들
+        function editPost(postId) {
+            alert(`게시글 ${postId}을 수정합니다.`);
+            // 수정 페이지로 이동하는 로직
+        }
+        
+        function deletePost(postId) {
+            if (confirm('정말로 이 게시글을 삭제하시겠습니까?')) {
+                alert(`게시글 ${postId}이 삭제되었습니다.`);
+                // 삭제 로직
+            }
+        }
+        
+        function viewPost(postId) {
+            alert(`게시글 ${postId}을 조회합니다.`);
+            // 게시글 상세 페이지로 이동하는 로직
+        }
+        
+        function viewOriginalPost(postId) {
+            alert(`원글 ${postId}을 조회합니다.`);
+            // 원글 상세 페이지로 이동하는 로직
+        }
+        
+        // 페이지 로드 시 게시글 탭 활성화
+        document.addEventListener('DOMContentLoaded', function() {
+            showCommunityTab('posts');
+        });
+    </script>
+</body>
+</html>
