@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>artist</title>
+</head>
+<style>
+     /*이름 폰트*/
+        @import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+        *{margin:0; padding: 0;
+            font-optical-sizing: auto; font-style: normal;
+            box-sizing: border-box;
+        }
+        tbody{
+            width: 100%;
+        }
+        /*팀멤버 폰트*/
+        @font-face {
+            font-family: 'Cafe24Surround';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+            font-weight: normal;
+            font-display: swap;
+        }
+        /* 아티스트 글씨체 */
+        @font-face {
+            font-family: 'SchoolSafetyKid';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimGgooreogiR.woff2') format('woff2');
+            font-weight: normal;
+            font-display: swap;
+        }
+
+        /* 바디 스크롤 가능하게끔 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('별작은버전.jpg') no-repeat center center / cover;
+            z-index: -1; /* 뒤로 보내기 */
+        }
+        .background{
+            padding-top: 68px;
+        }
+        
+        /* 이름 예전 글씨체
+        @font-face {
+            font-family: 'SandollSamlipHobbangOutline';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+            font-weight: normal;
+            font-display: swap;
+        }*/
+        
+        .name{
+            text-align: center;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            width: 60%; 
+            height: 1452px;
+            margin: 30px auto;
+        /* background: white;*/
+            min-height: 2000px;
+        }
+   
+        .total {
+            background: white;
+            border-radius: 25px;
+            width: 100%;
+            height: 1452px;
+        }
+        table {
+            margin: 0 auto;
+            width: 100%;         
+            border-collapse: collapse; 
+        }
+        .name h3{
+            margin: 0 auto;
+            margin-bottom: 7px;
+            font-family: 'Cafe24Surround', sans-serif;
+            letter-spacing: 0px;
+            font-size: 24px;
+            font-weight: 400;
+            font-style: normal;
+
+        }
+        .name h1{
+            letter-spacing:-2px;
+            font-size: 60px;
+           /* font-family: 'SandollSamlipHobbangOutline', sans-serif;
+            font-weight: 400;*/
+            font-family: "Vast Shadow", serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+        .profile01 {
+            display: flex;          /* 가로 정렬 */
+            align-items: center;    /* 위아래 가운데 정렬 */
+            padding: 30px 0px 30px 30px;
+          /*  border-bottom: 1px solid gray;*/
+
+            height: auto;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .profile_image img {
+        width: 300px;
+        margin-right: 30px;
+        height: auto;
+        /*border: 1px solid black;*/
+        }
+        .profile_info th{
+            font-size: 20px;
+            width: 25%;
+        }
+        .profile_info th,.profile_info td{
+            text-align: center;
+            border:  3px solid #dcedfd;;
+            color: #1a1a1a ;
+        }
+        .profile_info td{
+            font-size: 22px;
+
+            width: 44.5%;
+             font-family: 'SchoolSafetyKid', sans-serif;
+
+        }
+        .profile02{
+            width: 100%;
+            height: 200px;
+        }
+
+        .inform{
+        
+            align-items: center;    /* 위아래 가운데 정렬 */
+            padding: 30px 0px 30px 30px;
+          /*  border-bottom: 3px solid black;
+            border-left: 3px solid black;
+            border-right: 3px solid black;*/
+            height: auto;
+            width: 100%;        
+            
+        }
+        .inform th,.inform td{
+            text-align: center;
+            width:50px;
+            font-size: 25px;
+            /*table-layout: fixed;*/
+            color: #1a1a1a ;
+        }
+        .inform td{
+            padding: 25px 0px;
+            height: 250px;
+        }
+        .inform td img{
+            border: 3px solid #dcedfd;
+            border-radius: 7px;
+            height: 100%;
+            margin: 0px 5px;
+
+        }
+        .inform .photo{
+            width: 70%;
+            margin: 0 auto;
+        }
+        .photo{
+            
+            display: flex;
+        }
+
+
+
+        /* 연락처  css*/
+        .phone_sticker {
+            
+            width: 200px;
+            height: 250px;
+            display: inline-block;
+            background: #dcedfd; /* 종이 포스트잇 색상 */
+            padding: 15px 25px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 50px;
+
+
+        /* 종이 그림자 효과 */
+            box-shadow: 4px 4px 6px rgba(0,0,0,0.25);
+
+        /* 살짝 기울어진 듯한 효과 */
+            transform: rotate(2deg);
+            transition: transform 0.3s ease;
+        }
+        .phone_sticker p{
+            text-align: center;
+            margin-top: 50px;
+            font-family: 'SchoolSafetyKid', sans-serif;
+        }
+        .phone_sticker:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+        .phone_sticker:active {
+            transform: scale(0.95) rotate(2deg);
+        }
+
+
+
+        /* 모달 배경 */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* 모달 이미지 */
+        .modal-content {
+            display: block;
+            margin: 5% auto;
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            animation: zoomIn 0.3s ease;
+        }
+
+        /* 닫기 버튼 */
+        .close {
+            position: absolute;
+            top: 20px; right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* 페이드인 */
+        @keyframes fadeIn {
+            from { opacity: 0; } 
+            to { opacity: 1; }
+        }
+
+        /* 이미지 줌인 */
+        @keyframes zoomIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+    </style>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        const modal = document.getElementById("imgModal");
+        const modalImg = document.getElementById("modalImg");
+        const closeBtn = document.querySelector(".close");
+
+        document.querySelectorAll(".inform td.photo img").forEach(img => {
+            img.addEventListener("click", function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            });
+        });
+
+        closeBtn.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        modal.addEventListener("click", function(e) {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    });
+
+</script>
+<body>
+     <div class="background" >
+        
+        <div class="name">
+            <h3>TEAM MEMBER</h2>
+                <h1>PARK JION</h1>
+            </div>
+        <div class="content">
+            <div class="total">
+
+                <table class="profile01">
+                    <tr>
+                        <!-- 사진 -->
+                        <td rowspan="9" class="profile_image">
+                        <img src="ji.png">
+                        </td>
+                    </tr>
+                    <tr class="profile_info">
+                        <th>이름</th>
+                        <td>박지온</td>
+                    </tr>
+                    <tr class="profile_info">
+                        <th>생년월일</th>
+                        <td>2009.05.26.</td>
+                    </tr>
+                    <tr class="profile_info">
+                        <th>MBTI</th>
+                        <td>ENFP</td>
+                    </tr>
+                    <tr class="profile_info">
+                        <th>키</th>
+                        <td>174.0cm</td>
+                    </tr>
+                    <tr class="profile_info">
+                        <th>몸무게</th>
+                        <td>60kg</td>
+                    </tr>
+                    <tr class="profile_info">
+                        <th>동아리</th>
+                        <td>제과제빵부</td>
+                    </tr>
+                    <tr class="profile_info">
+                        <th>동아리 가입한 이유</th>
+                        <td>재밌어보여서</td>
+                    </tr>
+                    <tr class="profile_info">
+                        <th>좋아하는 것</th>
+                        <td>내가 만든 빵</td>
+                    </tr>
+                </table>
+                <table class="inform">
+                    <tr>
+                        <th class="phone">전화번호</th>
+                        <th class="photo">활동사진</th>
+                    </tr>
+                    <tr>
+                        <td class="phone">
+                            <div class="phone_sticker">
+                               <p>010-2009-0526<br>
+                                
+                            </p>
+                            </div>
+                        </td>
+                        <td class="photo">
+                        <img src="지온_활동사진.png">
+                        <img src="교실에서 지온.png">
+                        <img src="투샷.jpg">
+                        </td>
+                    </tr>
+                </table>
+                
+                <table class="inform">
+                    <tr>
+                        <th class="phone">친구들에게 한마디</th>
+                        <th class="photo">TEAM MEMBER</th>
+                    </tr>
+                    <tr>
+                        <td class="phone">
+                            <div class="phone_sticker">
+                               <p>나랑 놀자<br>
+                                ヽ(◍˃ᗜ˂◍)ﾉ!
+                                
+                            </p>
+                            </div>
+                        </td>
+                        <td class="photo">
+                        <img src="images/경 증사.png">
+                        <img src="images/세웅증사.png">
+                        <img src="images/승민증사.png">
+                        <img src="images/유현증사.png">
+                        </td>
+                    </tr>
+                </table>
+                
+            </div>
+        </div>
+
+</div>
+    <!-- 모달 구조 -->
+    <div id="imgModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+    </div>
+
+</body>
+</html>
