@@ -7,80 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test starting page</title>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="/css/gamepage.css">
     <style>
-
-        /* 공통 스타일 */
-        @font-face {
-            font-family: 'Pretendard';
-            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
-            font-weight: 100;
-            font-display: swap;
-        }
-
-        html, body {
-            min-height:100%; 
-            margin:0; padding:0;
-        }
-
-        input {
-            border: 1px solid #ccc;
-            padding: 15px;
-            font-size: 15px;
-            font-weight: 400;
-            height: 45px;
-            font-family: 'Pretendard', sans-serif;
-        }
-        input:focus {
-            outline: 1.5 solid #1a1a1a;
-        }
-        button {
-            background-color: #fafafa; 
-            border:1px solid #ccc;
-            width: 160px;
-            height: 50px;
-            font-size: 15px;
-            color: #1a1a1a;
-            gap: 15px;
-            font-family: 'Pretendard', sans-serif;
-        }
-        .black {
-            background-color: #1a1a1a; 
-            color: #fafafa;
-        }
 
         /* result_section */
         .result_box {
-            /* border:1px solid black; */
-            height:69vh; width:50vh; 
-            margin:auto;
-            display:flex; flex-direction:column; justify-content: space-between; align-items: center;
+            min-height: 710px;
+            justify-content: space-between;
             text-align: center;
         }
         .result_box h3 {
             font-size:1.6rem;
-            /*margin-bottom: 20%;*/
         }
         .result_box .result_button_box {
-            /* border: 1px solid black; */
-            height:10%; width:100%;
-            margin-bottom: 5%;
-            display:flex; flex-direction: row; justify-content: center; align-items: center; gap: 5%;
+            /*border: 1px solid black;*/
+            height:73px; width:100%;
+            margin-bottom: 25px;
+            display:flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px;
         }
         .result_button_box button {
-            height:100%; width:40%;
+            height: 70px; width: 180px;
         }
 
         .button_box {
-            /* border:1px solid black; */
-            height:40vh; width:50vh; 
-            margin:auto; 
-            display:flex; flex-direction:column; align-items: center;
+            min-height:310px;
         }
-        .button_box button {
-            height:13%; width:80%;
-            margin:5px; 
-        }
-
 
         /* stats_modal */
         .modal {
@@ -102,7 +53,7 @@
         }
 
         .title_box {
-            /* border:1px solid black; */
+            border:1px solid black;
             position:relative;
             height:10vh; width:75vh; 
             margin:auto;
@@ -121,7 +72,7 @@
             font-size:1.6rem;
         }
         .stat_box {
-            /* border:1px solid black; */
+            border:1px solid black;
             height:86vh; width:75vh; 
             margin:auto; padding: 2% 0;
             display:flex; flex-direction:column; align-items: center; justify-content: flex-start; gap: 1.5%;
@@ -151,7 +102,7 @@
 </head>
 <body>
     <section class="result_section">
-        <div class="result_box">
+        <div class="result_box box">
             <h3>나에게 어울리는 동아리는...</h3>
             <h3>'제과제빵부'입니다!</h3>
             <div class="result_button_box">
@@ -159,7 +110,7 @@
                 <button type="button" class="save_button">이미지 저장하기</button>
             </div>
         </div>
-        <div class="button_box">
+        <div class="button_box box">
             <button type="button" class="share_button black">테스트 공유하기</button>
             <button type="button" class="result_stats_button">다른 친구들 결과 보러가기</button>
             <button type="button" class="retry_button">다시 해보기</button>

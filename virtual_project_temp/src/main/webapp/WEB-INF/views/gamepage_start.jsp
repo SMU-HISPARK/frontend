@@ -8,125 +8,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test starting page</title>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="/css/gamepage.css">
     <style>
-
-        /* 공통 스타일 */
-        @font-face {
-            font-family: 'Pretendard';
-            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
-            font-weight: 100;
-            font-display: swap;
-        }
-
-        html, body {
-            min-height:100%; 
-            margin:0; padding:0;
-        }
-
-        input {
-            border: 1px solid #ccc;
-            padding: 15px;
-            font-size: 15px;
-            font-weight: 400;
-            height: 45px;
-            font-family: 'Pretendard', sans-serif;
-        }
-        input:focus {
-            outline: 1.5 solid #1a1a1a;
-        }
-        button {
-            background-color: #fafafa; 
-            border:1px solid #ccc;
-            width: 160px;
-            height: 50px;
-            font-size: 15px;
-            color: #1a1a1a;
-            gap: 15px;
-            font-family: 'Pretendard', sans-serif;
-        }
-        .black {
-            background-color: #1a1a1a; 
-            color: #fafafa;
-        }
-        
 
         /*// starting_section //*/
         /* title_box */
         .title_box {
-            /*border:1px solid black; */
-            height:59vh; width:50vh; 
-            margin:auto;
-            display:flex; flex-direction:column; justify-content: center; align-items: center;
+            
+            min-height: 610px;
+            justify-content: center;
             text-align: center;
         }
         .title_box h3 {
             font-size:1.6rem;
-            margin-bottom: 20%;
+            margin-bottom: 100px;
         }
 
         /* button_box */
         .button_box {
-            /*border:1px solid black; */
-            height:40vh; width:50vh; 
-            margin:auto; 
-            display:flex; flex-direction:column; align-items: center;
+            min-height: 410px;
         }
-        .button_box input, .button_box button {
-            height:13%; width:80%;
-            margin:5px; 
-        }
+
 
         /*// question_section //*/
         .question_section {
             display: none;
         }
         .question_box {
-            /*border:1px solid black; */
-            height:45vh; width:50vh; 
-            margin:auto;
-            display:flex; flex-direction:column; justify-content: center; align-items: center;
+            min-height: 480px;
+            justify-content: flex-end;
             text-align: center;
         }
         .question_box h4{
             font-size:1.1rem;
-            margin-top: 45%;
+            margin: 0;
         }
         .question_box h3 {
             font-size:1.6rem;
+            margin: 0;
+        }
+        .question_board {
+            border:1px solid black;
+            height:250px; width:450px; 
+            margin-bottom: 50px;
+            display:flex; flex-direction:column; align-items: center;
+        }
+        .question_progress {
+            width: 100%;
+            border:1px solid black;
+            flex: 2
+        }
+        .question_content {
+            width: 100%;
+            flex: 8;
+            border:1px solid black;
+            display:flex; flex-direction:column; justify-content: center; align-items: center;
         }
         
         /* answer_box */
         .next_box {
             margin-top: auto;
-            margin-bottom: 35%;
+            margin-bottom: 170px;
             width: fit-content;
             height: fit-content;
         }
         .next_button {
-            height:40px; width:100px;
+            height: 45px; width: 120px;
+            font-size: 0.8rem;
+            border: none;
         }
         .next_button:disabled {         /* 비활성화 스타일 */
             background-color: lightgray;
             color: gray;
-            border:1px solid gray;
+            border: none;
             cursor: not-allowed;
         }
         .answer_box {
-            /*border:1px solid black; */
-            height:54vh; width:50vh; 
-            margin:auto; 
-            display:flex; flex-direction:column; align-items: center;
+            min-height: 540px;
         }
         .answer_box .answer1, .answer_box .answer2 {
-            height:13%; width:80%;
-            margin:5px; 
+            height: 70px; width: 410px;
         }
         .answer_box .selected {
-            background-color: #1a1a1a;
+            background-color: #035fe0;
             color: #fafafa;
+            border: none;
         }
 
-
+        /* background_img */
+        .question_img {
+            /*border:1px solid black;*/
+            background: url('/images/corridor_school01.png') no-repeat;
+            background-size: auto;
+            position: fixed;
+            bottom: 50%; left: 50%;
+            transform: translate(-50%, 50%);
+            /*width: 100%; height: auto;*/
+            width: 1340px;
+            height: 895px;
+            z-index: -1;
+        }
+        .background_img {
+            background: url('/images/bluestars.jpg');
+            /*
+            background-position: center;*/
+            background-attachment: fixed;
+            position: fixed;
+            inset: 0;
+            width: 100%; height: 100%;
+            z-index: -2;
+        }
 
 
         /* modal 창 */
@@ -140,8 +131,6 @@
             justify-content: center;
             align-items: center;
         }
-        
-
         .modal_content {
             background-color: #fafafa;
             padding: 20px;
@@ -152,19 +141,6 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-        }
-        .modal_content input {
-            width: 80%;
-            margin: 10px 0;
-        }
-        .modal_content button {
-            /*
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            */
         }
         .close {
             color: #aaa;
@@ -178,13 +154,13 @@
 <body>
     <!-- 시작 섹션 -->
     <section class="starting_section">
-        <div class="title_box">
+        <div class="title_box box">
             <h3>동아리 신입부원 모집 테스트</h3>
             <p>나에게 맞는 동아리는 어디일까?</p>
         </div>
 
         <form id="start_form">
-            <div class="button_box">
+            <div class="button_box box">
                 <input type="text" name="name" placeholder="이름을 입력해주세요." 
                 <c:if test="${session_name != null}">value="${session_name}"</c:if> />
                 <c:if test="${session_id == null}">
@@ -199,12 +175,18 @@
 
     <!-- 질문 섹션 -->
     <section class="question_section">
-        <div class="question_box">
-            <h4>1/3</h4>                    <!-- 임시로 3문제까지 -->
-            <h3>쉬는 시간의 나의 모습은?</h3>
+        <div class="question_box box">
+            <div class="question_board">
+                <div class="question_progress">
+                    <h4>1/3</h4>                    <!-- 임시로 3문제까지 -->
+                </div>
+                <div class="question_content">
+                    <h3>쉬는 시간의 나의 모습은?</h3>
+                </div>
+            </div>
         </div>
         <form>
-            <div class="answer_box">
+            <div class="answer_box box">
                 <input type="hidden" class="question_num" value=""/>       <!-- DB에 저장된 질문번호 -->
                 <button type="button" class="answer1">친구들과 수다</button>
                 <input type="hidden" name="answer1" value=""/>             <!-- DB에 저장된 답변태그1 -->
@@ -214,7 +196,9 @@
                     <button type="submit" class="next_button black" disabled>다음으로</button>
                 </div>
             </div>
-        </form>
+        </form> 
+        <div class="question_img"></div>
+        <div class="background_img"></div>
     </section>
     <!-- /질문 섹션 -->
 
