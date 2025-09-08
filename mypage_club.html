@@ -3,120 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/mypage.css">
     <title>가입 동아리</title>
     <style>
-        @font-face {
-            font-family: 'Pretendard4';
-            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-            font-weight: 400;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Pretendard5';
-            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
-            font-weight: 500;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Pretendard6';
-            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
-            font-weight: 600;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Pretendard7';
-            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
-            font-weight: 700;
-            font-display: swap;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Pretendard4', sans-serif;
-            padding: 0;
-            margin: 0;
-        }
-
-        .container {
-            max-width: 1230px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* 헤더 */
-        .header {
-            padding: 20px 0;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .header h1 {
-            font-size: 30px;
-            font-weight: 500;
-            color: #222;
-        }
-
-        .main-layout {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-
-        /* 네비게이션 */
-        .navigation {
-            display: flex;
-            flex-direction: column;
-            width: 180px;
-            padding: 20px 0;
-            border-radius: 12px;
-        }
-
-        .navigation a{ text-decoration : none; color : #555;}
-
-        .nav-item {
-            padding: 12px 20px;
-            margin: 5px 10px;
-            cursor: pointer;
-            border-radius: 8px;
-            font-weight: 500;
-            color: #555;
-            transition: all 0.2s;
-        }
-
-        .nav-item:hover {
-            background-color: #f0f5ff;
-            color: #035fe0;
-        }
-
-        .nav-item.active {
-            background-color: #035fe0;
-            color: #fff;
-        }
-
-        /* content */
-        .content {
-            flex: 1;
-            padding: 40px 30px;
-            min-height: 500px;
-            border-radius: 12px;
-        }
-
-        .content h2 {
-            margin-bottom: 20px;
-            font-size: 22px;
-            font-weight: 500;
-            color: #222;
-            border-bottom: 2px solid #035fe0;
-            display: inline-block;
-            padding-bottom: 5px;
+        .message{
+            border : 1px border #e0e0e06e;
+            background : #e0e0e06e;
+            padding : 15px 10px;
+            margin-bottom : 20px;
+            font-size : 13px;
+            font-weight : 400;
+            color : #1a1a1ab6;
         }
 
         /* 동아리 카드 */
@@ -135,14 +32,8 @@
             padding: 15px;
             text-align: center;
             cursor: pointer;
-            border-radius: 10px;
-            transition: all 0.2s ease;
         }
 
-        .club-card:hover {
-            background-color: #f5faff;
-            box-shadow: 0 4px 12px rgba(3, 95, 224, 0.1);
-        }
 
         .club-card.inactive {
             border: 1px dashed #ccc;
@@ -151,11 +42,6 @@
             cursor: default;
         }
 
-        .club-card.inactive:hover {
-            background-color: #fafafa;
-            transform: none;
-            box-shadow: none;
-        }
 
         .club-emoji img{
             width : 50px;
@@ -164,7 +50,7 @@
         }
 
         .club-name {
-            font-weight: 500;
+            font-weight: 400;
             margin-bottom: 5px;
         }
 
@@ -175,19 +61,13 @@
 
         /* 버튼 */
         .btn {
-            background-color: #035fe0;
-            border: none;
-            color: #fff;
+            background : #FFF;
+            border: 1px solid #ccc;
             padding: 10px 20px;
             cursor: pointer;
             font-size: 14px;
-            font-weight: 500;
-            border-radius: 8px;
+            font-weight: 400;
             transition: background 0.2s ease;
-        }
-
-        .btn:hover {
-            background-color: #024bb5;
         }
 
         /* 하단 안내 문구 */
@@ -224,21 +104,30 @@
 
     <div class="container">
         <div class="header">
-            <h1>마이페이지</h1>
+            <div class = "title">마이페이지</div>
         </div>
-        
-        
-        <div class="main-layout">
-        <div class="navigation">
-            <div class="nav-item"><a href = "mypage_member.html">회원정보</a></div>
-            <div class="nav-item active">가입 동아리</div>
-            <div class="nav-item"><a href = "mypage_community.html">게시글 관리</a></div>
-            <div class="nav-item"><a href = "mypage_shop.html">주문내역</a></div>
-        </div>
+        <ul class="menu">
+            <li>
+            <a href = "mypage_member.html">회원정보</a>
+            </li>
+            <li class = "selected">
+                <a href = "mypage_club.html">가입 동아리</a>
+            </li>
+            <li>
+                <a href = "mypage_community.html">게시글 관리</a>
+            </li>
+            <li>
+                <a href = "mypage_shop.html">주문내역</a>                
+            </li>
+        </ul>
         
         <div class="content">
-            <h2>가입 동아리</h2>
             
+            <div class = "message">
+                <p>* 가입한 동아리를 확인 가능합니다.</p>
+                <p style = "font-size : 12px;">  </p>
+                <p>* 동아리 이름을 클릭하면 해당 동아리의 상세 에피소드를 확인할 수 있습니다.</p>
+            </div>
             <div class="detail-section">
                 <div class="club-grid">
                     <div class="club-card" onclick="viewClubEpisode('제과제빵부')">
@@ -274,7 +163,6 @@
                     </div>
                 </div>
                 
-                <p style="font-size: 10px; margin: 20px 0 0 20px;">* 에피소드 다시보기 : 해당 동아리 클릭</p>
             </div>
             
             <div style="text-align: center; margin-top: 30px;">

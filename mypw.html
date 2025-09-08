@@ -45,46 +45,35 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 540px;
             margin: 0 auto;
-            padding: 20px;
         }
         
         .header {
-            padding: 20px 0;
+            padding: 70px 0;
             text-align: center;
-            margin-bottom: 20px;
+            margin: 0 auto;   
         }
 
-        .header h1 {
+        .header div{
             font-size: 30px;
-            font-weight: 500;
+            font-weight: 700;
             color: #222;
         }
         
-        .back-button {
-            margin-bottom: 20px;
-        }
         
         .btn {
             background-color: white;
-            border: 1px solid black;
+            border: 1px solid #ccc;
             padding: 8px 16px;
             cursor: pointer;
             font-size: 14px;
         }
         
-        .btn:hover {
-            background-color: #f0f0f0;
-        }
         
         .btn-primary {
             background-color: black;
             color: white;
-        }
-        
-        .btn-primary:hover {
-            background-color: #333;
         }
         
         .form-section {
@@ -100,7 +89,7 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: bold;
+            font-weight: 500;
         }
         
         .form-group input {
@@ -116,19 +105,22 @@
         }
         
         .error-message {
-            color: red;
             font-size: 12px;
             margin-top: 5px;
             display: none;
         }
         
         .success-message {
-            color: green;
+            color : #035fe0;
             font-size: 12px;
             margin-top: 5px;
             display: none;
         }
         
+        #blank{
+            height : 10px;
+        }
+
         .password-requirements {
             border: 1px solid black;
             padding: 15px;
@@ -136,8 +128,9 @@
             font-size: 12px;
         }
         
-        .password-requirements h4 {
-            margin-bottom: 10px;
+        .password-requirements a {
+            font-size : 14px;
+            font-weight : 500;
         }
         
         .password-requirements ul {
@@ -176,26 +169,23 @@
     <div id="header-container">
         
     </div>
-    <div id = "blank">
-
-    </div>
+    
     <div class="container">
         <div class="header">
-            <h1>비밀번호 변경</h1>
+            <div>비밀번호 변경</div>
         </div>
         
         <div class="content">
-            <div class="back-button">
-                <button class="btn">← 이전으로</button>
-            </div>
             
             <div class="password-requirements">
-                <h4>비밀번호 요구사항</h4>
+                <a>비밀번호 요구사항</a>
+                <div id = "blank">
+
+                </div>
                 <ul>
                     <li>8자 이상 16자 이하</li>
                     <li>영문 대문자, 소문자, 숫자, 특수문자 중 3가지 이상 포함</li>
                     <li>연속된 문자나 숫자 3개 이상 사용 불가</li>
-                    <li>개인정보와 관련된 정보 사용 불가</li>
                 </ul>
             </div>
             
@@ -375,11 +365,7 @@
         
         // 폼 리셋
         function resetForm() {
-            document.getElementById('passwordForm').reset();
-            
-            // 모든 에러/성공 메시지 숨기기
-            const messages = document.querySelectorAll('.error-message, .success-message');
-            messages.forEach(msg => msg.style.display = 'none');
+            location.href = "mypage_member.html";
         }
         
         // 현재 비밀번호 에러 메시지 숨기기 (입력 시)

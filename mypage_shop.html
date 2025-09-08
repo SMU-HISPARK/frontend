@@ -4,144 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/mypage.css">
     <title>주문내역</title>
     <style>
-        @font-face {
-            font-family: 'Pretendard4';
-            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-            font-weight: 400;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Pretendard5';
-            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
-            font-weight: 500;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Pretendard6';
-            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
-            font-weight: 600;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Pretendard7';
-            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
-            font-weight: 700;
-            font-display: swap;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Pretendard4', sans-serif;
-            padding: 0;
-            margin: 0;
-        }
-
-        .container {
-            max-width: 1230px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* 헤더 */
-        .header {
-            padding: 20px 0;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .header h1 {
-            font-size: 30px;
-            font-weight: 500;
-            color: #222;
-        }
-
-        .main-layout {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-
-        /* 네비게이션 */
-        .navigation {
-            display: flex;
-            flex-direction: column;
-            width: 180px;
-            padding: 20px 0;
-            border-radius: 12px;
-        }
-
-        .nav-item a{ text-decoration : none; color : #555;}
-
-        .nav-item {
-            padding: 12px 20px;
-            margin: 5px 10px;
-            cursor: pointer;
-            border-radius: 8px;
-            font-weight: 500;
-            color: #555;
-            transition: all 0.2s;
-        }
-
-        .nav-item:hover {
-            background-color: #f0f5ff;
-            color: #035fe0 !important;
-        }
-
-        .nav-item.active {
-            background-color: #035fe0;
-            color: #fff !important;
-        }
-
-        /* content */
-        .content {
-            flex: 1;
-            padding: 40px 30px;
-            min-height: 500px;
-            border-radius: 12px;
-        }
-
-        .content h2 {
-            margin-bottom: 20px;
-            font-size: 22px;
-            font-weight: 500;
-            color: #222;
-            border-bottom: 2px solid #035fe0;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            font-size: 18px;
-            color: #222;
-        }
 
         /* 버튼 */
         .btn {
-            background-color: #035fe0;
+            background-color: #1a1a1a;
             border: none;
             color: #fff;
             padding: 10px;
             cursor: pointer;
             font-size: 14px;
             font-weight: 500;
-            border-radius: 8px;
-            transition: background 0.2s ease;
             margin-right: 10px;
         }
 
-        .btn:hover {
-            background-color: #024bb5;
-        }
 
         .btn-small {
             padding: 6px 12px;
@@ -157,8 +35,6 @@
         .order-item {
             border: 1px solid #ddd;
             padding: 20px;
-            border-radius: 10px;
-            transition: all 0.2s ease;
             background-color: #fff;
         }
 
@@ -196,31 +72,45 @@
             display: block;
             font-size: 12px;
             margin-bottom: 5px;
-            color: #555;
         }
 
         .order-field span {
-            font-weight: bold;
-            color: #222;
+            font-weight: 500;
+            font-size: 15px;
         }
 
         .status-badge {
             padding: 4px 8px;
-            font-size: 11px;
-            font-weight: bold;
-            background-color: #f0f5ff;
-            color : white;
-            border-radius: 4px;
+            font-size: 12px !important;
         }
 
+        .fin{
+            background : #666;
+            color : white;
+        }
+
+        .ing{
+            background : #035fe0;
+            color : white;
+        }
+
+        .buy{
+            background : #c8def8;
+            color : white;
+        }
         /* 상세 & 배송 카드 */
         .detail-section {
             border: 1px solid #ddd;
             padding: 20px;
             margin-bottom: 20px;
-            border-radius: 10px;
             background-color: #fff;
-            box-shadow: 0 2px 6px rgba(3, 95, 224, 0.05);
+            font-size : 15px;
+        }
+
+        .detail-section .subtitle{
+            font-size : 16px;
+            font-weight : 600;
+            margin-bottom : 10px;
         }
 
         .detail-grid {
@@ -247,8 +137,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-radius: 8px;
-            background-color: #f9f9ff;
+            background-color: white;
         }
 
         .tracking-status {
@@ -298,22 +187,27 @@
     </div>
 
     <div class="container">
-        <div class="header">
-            <h1>마이페이지</h1>
+       <div class="header">
+            <div class = "title">마이페이지</div>
         </div>
-        <div class="main-layout">
-
-            <div class="navigation">
-                <div class="nav-item"><a href = "mypage_member.html">회원정보</a></div>
-                <div class="nav-item"><a href = "mypage_club.html">가입 동아리</a></div>
-                <div class="nav-item"><a href = "mypage_community.html">게시글 관리</a></div>
-                <div class="nav-item active">주문내역</div>
-            </div>
+        <ul class="menu">
+            <li>
+            <a href = "mypage_member.html">회원정보</a>
+            </li>
+            <li>
+                <a href = "mypage_club.html">가입 동아리</a>
+            </li>
+            <li>
+                <a href = "mypage_community.html">게시글 관리</a>
+            </li>
+            <li class = "selected">
+                <a href = "mypage_shop.html">주문내역</a>                
+            </li>
+        </ul>
         
         <div class="content">
             <!-- 주문내역 목록 -->
             <div id="orders-list" class="section active">
-                <h2>주문내역</h2>
                 <div class="order-list">
                     <div class="order-item">
                         <div class="order-header">
@@ -335,7 +229,7 @@
                             </div>
                             <div class="order-field">
                                 <label>배송상태</label>
-                                <span class="status-badge">배송완료</span>
+                                <span class="status-badge fin">배송완료</span>
                             </div>
                         </div>
                         <div class="order-actions">
@@ -364,7 +258,7 @@
                             </div>
                             <div class="order-field">
                                 <label>배송상태</label>
-                                <span class="status-badge">배송중</span>
+                                <span class="status-badge ing">배송중</span>
                             </div>
                         </div>
                         <div class="order-actions">
@@ -393,7 +287,7 @@
                             </div>
                             <div class="order-field">
                                 <label>배송상태</label>
-                                <span class="status-badge">결제완료</span>
+                                <span class="status-badge buy">결제완료</span>
                             </div>
                         </div>
                         <div class="order-actions">
@@ -409,7 +303,6 @@
                 <div class="back-button">
                     <button class="btn" onclick="showOrdersList()">← 주문내역으로 돌아가기</button>
                 </div>
-                <h2>주문 상세 정보</h2>
                 
                 <div id="order-detail-content">
                     <!-- 주문 상세 내용이 여기에 동적으로 표시됩니다 -->
@@ -421,8 +314,6 @@
                 <div class="back-button">
                     <button class="btn" onclick="showOrdersList()">← 주문내역으로 돌아가기</button>
                 </div>
-                <h2>배송 조회</h2>
-                
                 <div id="delivery-tracking-content">
                     <!-- 배송 조회 내용이 여기에 동적으로 표시됩니다 -->
                 </div>
@@ -502,7 +393,7 @@
             const order = orderData[orderNum];
             const detailContent = `
                 <div class="detail-section">
-                    <h3>주문 정보</h3>
+                    <div class = "subtitle">주문 정보</div>
                     <div class="detail-grid">
                         <div class="detail-item">
                             <label>주문번호:</label>
@@ -520,7 +411,7 @@
                 </div>
                 
                 <div class="detail-section">
-                    <h3>상품 정보</h3>
+                    <div class = "subtitle">상품 정보</div>
                     <div class="detail-grid">
                         <div class="detail-item">
                             <label>상품명:</label>
@@ -542,7 +433,7 @@
                 </div>
                 
                 <div class="detail-section">
-                    <h3>결제 정보</h3>
+                    <div class = "subtitle">결제 정보</div>
                     <div class="detail-grid">
                         <div class="detail-item">
                             <label>상품금액:</label>
@@ -553,18 +444,18 @@
                             <span>${order.deliveryFee}</span>
                         </div>
                         <div class="detail-item">
-                            <label>총 결제금액:</label>
-                            <span style="font-weight: bold;">${order.finalAmount}</span>
-                        </div>
-                        <div class="detail-item">
                             <label>결제방법:</label>
                             <span>${order.paymentMethod}</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>총 결제금액:</label>
+                            <span>${order.finalAmount}</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="detail-section">
-                    <h3>배송 정보</h3>
+                    <div class = "subtitle">배송 정보</div>
                     <div class="detail-grid">
                         <div class="detail-item">
                             <label>수령인:</label>
@@ -629,7 +520,7 @@
             const tracking = trackingData[orderNum];
             const trackingContent = `
                 <div class="detail-section">
-                    <h3>배송 정보</h3>
+                    <div class = "subtitle">배송 정보</div>
                     <div class="detail-grid">
                         <div class="detail-item">
                             <label>주문번호:</label>
@@ -651,7 +542,7 @@
                 </div>
                 
                 <div class="detail-section">
-                    <h3>배송 추적</h3>
+                    <div class = "subtitle">배송 추적</div>
                     ${tracking.steps.map(step => `
                         <div class="tracking-step">
                             <div>
