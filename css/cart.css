@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -8,12 +23,6 @@
 
 ul,ol{list-style: none;}
 
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-display: swap;
-}
 
 
 table, tr{
@@ -32,13 +41,14 @@ div {
 }
 
 .title {
+    font-family: 'Pretendard';
     width: 1230px;
     height: 170px;
     margin: 0 auto;
     text-align: center;
     padding:70px;
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .location{
@@ -92,6 +102,12 @@ div {
     font-size: 14px;
 }
 
+.orderStep li .current {
+    color: #035fe0;
+    font-weight: 700;
+    font-size: 15px;
+}
+
 
 .pricebasketbox {
     display: flex;
@@ -133,6 +149,7 @@ div {
 
 .description span{
     color:#a0a0a0;
+    font-size:15px;
 }
 
 .countselect {

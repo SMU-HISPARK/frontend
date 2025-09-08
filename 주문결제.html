@@ -206,13 +206,17 @@
                         <div class="paymethod-detail" id="transfer-detail" style="display:none">- 10/1까지 적립금 외 다른 수단의 결제가 중단됩니다.</div>
                         <div class="paymethod-detail" id="virtualAccount-detail" style="display:none">- 10/1까지 적립금 외 다른 수단의 결제가 중단됩니다.</div>
                         <div class="paymethod-detail" id="paidCredit-detail" style="display:none">
-                            적립금 : 1,000,000
-                            <br>
-                            결제 금액 : <input type="text" id="paidCreditValue" value="0" min="0" />
-                            <button type="button">적용</button>
-                            <button type="button">전액 사용</button>
-                            <br>
-                            결제 후 잔액 : 956,000
+                            <div>
+                                적립금 : 1,000,000
+                            </div>
+                            <div class="creditInputDiv">
+                                결제 금액 : <input type="text" id="paidCreditValue" value="0" min="0" />
+                                <button type="button">적용</button>
+                                <button type="button" class=" payAll">전액 사용</button>
+                            </div>
+                            <div>
+                                결제 후 잔액 : 956,000
+                            </div>
                         </div>
                     </div>
                     
