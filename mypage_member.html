@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원정보</title>
+    <style>
+        @font-face {
+            font-family: 'Pretendard4';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard5';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard6';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard7';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Pretendard4', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1230px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 헤더 */
+        .header {
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 30px;
+            font-weight: 500;
+            color: #222;
+        }
+
+        .main-layout {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        /* 네비게이션 */
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            width: 180px;
+            padding: 20px 0;
+            border-radius: 12px;
+        }
+
+        .navigation a{ text-decoration : none; color : #555;}
+        
+        .nav-item {
+            padding: 12px 20px;
+            margin: 5px 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: 500;
+            color: #555;
+            transition: all 0.2s;
+        }
+
+        .nav-item:hover {
+            background-color: #f0f5ff;
+            color: #035fe0 ;
+        }
+
+        .nav-item.active {
+            background-color: #035fe0;
+            color: #fff;
+        }
+
+        /* content */
+        .content {
+            flex: 1;
+            padding: 40px 30px;
+            min-height: 500px;
+            border-radius: 12px;
+        }
+
+        .content h2 {
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: 500;
+            color: #222;
+            border-bottom: 2px solid #035fe0;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .profile-details {
+            display: grid;
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #035fe0;
+            background-color: #fff;
+        }
+
+        /* 버튼 */
+        .btn {
+            background-color: #035fe0;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background-color: #024bb5;
+        }
+
+        .form-group div {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 10px;
+        }
+
+    </style>
+
+    <script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+        });
+
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="header-container">
+        
+    </div>
+    <div id = "blank">
+
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>마이페이지</h1>
+        </div>
+        <div class="main-layout">
+        <div class="navigation">
+            <div class="nav-item active">회원정보</div>
+            <a href = "mypage_club.html"><div class="nav-item">가입 동아리</div></a>
+            <a href = "mypage_community.html"></a><div class="nav-item">게시글 관리</div></a>
+            <a href = "mypage_shop.html"></a><div class="nav-item">주문내역</div></a>
+        </div>
+        
+        <div class="content">
+            <h2>회원정보</h2>
+            <div class="profile-details">
+                <div class="form-group">
+                    <label>아이디</label>
+                    <input type="text" value="aaa" readonly>
+                </div>
+                <div class="form-group">
+                    <label>이름</label>
+                    <input type="text" value="홍길동" readonly>
+                </div>
+                <div class="form-group">
+                    <label>전화번호</label>
+                    <input type="tel" value="010-1234-5678">
+                </div>
+                <div class="form-group">
+                    <label>이메일</label>
+                    <input type="email" value="hong@example.com" readonly>
+                </div>
+                <div class="form-group">
+                    <label>가입일</label>
+                    <input type="text" value="2024-01-15" readonly>
+                </div>
+                <div class="form-group">
+                    <label></label>
+                    <div>
+                        <button class="btn" id="editBtn">정보 수정</button>
+                        <button class="btn" onclick="location.href='mypage_pw.html'">비밀번호 변경</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            
+    </div>
+
+    <div id="footer-container">
+        
+    </div>
+    <script>
+        // 정보 수정 기능
+        document.addEventListener('DOMContentLoaded', function() {
+            const editButton = document.getElementById('editBtn');
+            editButton.addEventListener('click', function() {
+                const inputs = document.querySelectorAll('.profile-details input:not([readonly])');
+                
+                if (this.textContent === '정보 수정') {
+                    inputs.forEach(input => {
+                        input.removeAttribute('readonly');
+                        input.style.backgroundColor = '#fff';
+                    });
+                    this.textContent = '저장';
+                } else {
+                    inputs.forEach(input => {
+                        input.setAttribute('readonly', true);
+                        input.style.backgroundColor = '#f9f9f9';
+                    });
+                    this.textContent = '정보 수정';
+                    alert('정보가 수정되었습니다.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

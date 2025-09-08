@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가입 동아리</title>
+    <style>
+        @font-face {
+            font-family: 'Pretendard4';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard5';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard6';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+            font-weight: 600;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Pretendard7';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Pretendard4', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1230px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 헤더 */
+        .header {
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 30px;
+            font-weight: 500;
+            color: #222;
+        }
+
+        .main-layout {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        /* 네비게이션 */
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            width: 180px;
+            padding: 20px 0;
+            border-radius: 12px;
+        }
+
+        .navigation a{ text-decoration : none; color : #555;}
+
+        .nav-item {
+            padding: 12px 20px;
+            margin: 5px 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: 500;
+            color: #555;
+            transition: all 0.2s;
+        }
+
+        .nav-item:hover {
+            background-color: #f0f5ff;
+            color: #035fe0;
+        }
+
+        .nav-item.active {
+            background-color: #035fe0;
+            color: #fff;
+        }
+
+        /* content */
+        .content {
+            flex: 1;
+            padding: 40px 30px;
+            min-height: 500px;
+            border-radius: 12px;
+        }
+
+        .content h2 {
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: 500;
+            color: #222;
+            border-bottom: 2px solid #035fe0;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* 동아리 카드 */
+        .detail-section {
+            margin-bottom: 30px;
+        }
+
+        .club-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px 25px;
+        }
+
+        .club-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .club-card:hover {
+            background-color: #f5faff;
+            box-shadow: 0 4px 12px rgba(3, 95, 224, 0.1);
+        }
+
+        .club-card.inactive {
+            border: 1px dashed #ccc;
+            color: #999;
+            background-color: #fafafa;
+            cursor: default;
+        }
+
+        .club-card.inactive:hover {
+            background-color: #fafafa;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .club-emoji img{
+            width : 50px;
+            height : 50px;
+            margin-bottom: 10px;
+        }
+
+        .club-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .join-date {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* 버튼 */
+        .btn {
+            background-color: #035fe0;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #024bb5;
+        }
+
+        /* 하단 안내 문구 */
+        .detail-section p {
+            font-size: 12px;
+            color: #666;
+            margin-top: 15px;
+        }
+    </style>
+
+    <script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+        });
+
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+</head>
+<body>
+
+    <div id="header-container">
+        
+    </div>
+    <div id = "blank">
+
+    </div>
+
+
+    <div class="container">
+        <div class="header">
+            <h1>마이페이지</h1>
+        </div>
+        
+        
+        <div class="main-layout">
+        <div class="navigation">
+            <div class="nav-item"><a href = "mypage_member.html">회원정보</a></div>
+            <div class="nav-item active">가입 동아리</div>
+            <div class="nav-item"><a href = "mypage_community.html">게시글 관리</a></div>
+            <div class="nav-item"><a href = "mypage_shop.html">주문내역</a></div>
+        </div>
+        
+        <div class="content">
+            <h2>가입 동아리</h2>
+            
+            <div class="detail-section">
+                <div class="club-grid">
+                    <div class="club-card" onclick="viewClubEpisode('제과제빵부')">
+                        <div class="club-emoji"><img src = "cake.png" alt = "제과제빵부"></div>
+                        <div class="club-name">제과제빵부</div>
+                        <div class="join-date">가입일: 2025-08-30</div>
+                    </div>
+                    
+                    <div class="club-card" onclick="viewClubEpisode('밴드부')">
+                        <div class="club-emoji"><img src = "band.png" alt = "밴드부"></div>
+                        <div class="club-name">밴드부</div>
+                        <div class="join-date">가입일: 2025-08-25</div>
+                    </div>
+                    
+                    <div class="club-card" onclick="viewClubEpisode('도서부')">
+                        <div class="club-emoji"><img src = "book.png" alt = "도서부"></div>
+                        <div class="club-name">도서부</div>
+                        <div class="join-date">가입일: 2025-08-20</div>
+                    </div>
+                    
+                    <div style="grid-column:1 / -1;"></div>
+                    
+                    <div class="club-card inactive">
+                        <div class="club-emoji"><img src = "basket.png" alt = "운동부"></div>
+                        <div class="club-name">운동부</div>
+                        <div class="join-date">미가입</div>
+                    </div>
+                    
+                    <div class="club-card inactive">
+                        <div class="club-emoji"><img src = "school.png" alt = "선도부"></div>
+                        <div class="club-name">선도부</div>
+                        <div class="join-date">미가입</div>
+                    </div>
+                </div>
+                
+                <p style="font-size: 10px; margin: 20px 0 0 20px;">* 에피소드 다시보기 : 해당 동아리 클릭</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn" onclick="startNewTest()">새 테스트 시작하기</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="footer-container">
+        
+    </div>
+
+
+    <script>
+        function viewClubEpisode(clubName) {
+            alert(`${clubName} 에피소드를 다시 보여드립니다.`);
+            // 여기에 에피소드 보기 로직을 구현할 수 있습니다.
+        }
+        
+        function startNewTest() {
+            alert('새로운 동아리 매칭 테스트를 시작합니다.');
+            // 여기에 테스트 페이지로 이동하는 로직을 구현할 수 있습니다.
+        }
+    </script>
+</body>
+</html>
