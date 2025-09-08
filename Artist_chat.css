@@ -1,0 +1,224 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+*{
+    font-family: 'Pretendard';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전체 레이아웃 */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 상단 div */
+.top_div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background-color: #eeeeee;
+    border-bottom: 1px solid #ccc;
+    z-index: 100;
+    display: flex;
+}
+
+
+/* 버튼 div */
+.button_div{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+/* 뒤로가기 버튼 */
+.chatCloseBtn{
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.fa-chevron-left{
+    font-size: 25px;
+    position: relative;
+}
+
+/* 프로필 div */
+.profile_div{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 프로필 사진 */
+.profile_img{
+    width: 45px;
+    height: 45px;
+    position: relative;
+    margin-top: 5px;
+}
+
+/* 프로필 이름 */
+.profile_name{
+    width: auto;
+    text-align: center;
+    font-size: 12px;
+    color: #1a1a1a;
+}
+
+/* 스크롤 div */
+.middle_div{
+    flex: 1;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    overflow-y: auto;
+}
+
+/* 말풍선 div */
+.chat{
+    display: flex;
+    width: 100%;
+    margin-bottom: 5px;
+    align-items: flex-start;
+}
+
+/* 아이콘 */
+.chat .icon{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0 8px;
+}
+
+/* 텍스트 div (프로필명 + 말풍선) */
+.chat_col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    width: 100%;
+}
+
+/* 프로필명 div*/
+.chat_name{
+    width: auto;
+    font-size: 12px;
+    margin-bottom: 2px;
+    color: #1a1a1a;
+}
+
+/* 공통 말풍선 스타일 */
+.chat .textbox {
+    position: relative;
+    display: inline-block;
+    max-width: 70%;
+    padding: 10px;
+    margin-top: 1px;
+    border-radius: 13px;
+    font-size: 13px;
+    word-wrap: break-word;    /* 단어 단위 줄바꿈 */
+    word-break: break-word;   /* 긴 단어도 강제 줄바꿈 */
+    white-space: pre-wrap;    /* 엔터, 공백 유지 + 자동 줄바꿈 */
+}
+
+/* 왼쪽 채팅 (상대방) */
+.ch1 .textbox {
+    background-color: #ddd;
+    border-top-left-radius: 5px;
+    color: #1a1a1a;
+}
+
+/* 오른쪽 채팅 (내 메시지) */
+.ch2 {
+    display: flex;
+    flex-direction: row-reverse; /* 말풍선 오른쪽 */
+}
+
+.ch2 .textbox {
+    background-color: #035fe0;
+    color: #fafafa;
+    border-bottom-right-radius: 5px;
+    margin-right: 8px;
+}
+
+/* 입력창 div */
+.bottom_div{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+    z-index: 100;
+}
+
+.chat_text{
+    width: 99%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 7px;
+    align-items: flex-start;
+    color: #1a1a1a;
+    border: 1.5px solid #ccc;
+    border-radius: 7px;
+    font-size: 13px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    background-color: #fafafa;
+    box-sizing: border-box;
+    outline: 0;
+    overflow-y: auto;
+    resize: none;
+}
+
+.fa-paper-plane{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
