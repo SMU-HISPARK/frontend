@@ -9,7 +9,7 @@ body {
 
 
 .polaroid {
-    width: 420px;
+    width: 280px;
     border: 1px solid black;
 }
 
@@ -19,7 +19,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 100px;
+    gap: 90px;
 }
 
 .main_div {
@@ -28,5 +28,5 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    gap: 50px;
+    gap: 25px;
 }
