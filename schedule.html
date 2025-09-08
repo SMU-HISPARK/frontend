@@ -117,7 +117,7 @@
     .total{
         width: 70%;
         border: 2px solid #c1b8a1;
-        margin: 100px auto;
+        margin: 80px auto;
         margin-bottom: 20px;
         background: url('images/종이질감유현.jpg') no-repeat center center / cover;
         box-shadow: 4px 4px 6px rgba(0,0,0,0.25);
@@ -125,12 +125,14 @@
         
     }
     body::before {
+        margin: 0;
+        padding: 0;
         content: "";
         position: fixed;
         top: 0; left: 0;
         width: 100%; height: 100%;
+        background-size: auto;
         background: url('images/칠판.jpg') no-repeat top center/ cover;
-    
         z-index: -1; /* 뒤로 보내기 */
     }
     .top{
@@ -156,35 +158,36 @@
         width: 60%;
         text-align: center;
         padding-top: 20px;
+        color: #1a1a1a;
     }
     .title_01{
         letter-spacing: 6px;
         font-size: 30px;
         margin-bottom: 7px;
         border-bottom: 1px solid #c1b8a1;
+        color: #1a1a1a;
         height: 50px;
     }
     .title_02{
+        color: #1a1a1a;
         font-size: 22px;
 
     }
     .s_no{
-        
+        color: #1a1a1a;
         width: 20%;
         /* width: 100px;*/
         height: 120px; 
         text-align: center;
         padding-top: 38px;
-    
     }
     .main{
         width: 100%;
-    
         /*border: 1px solid black;*/
         height: auto;
         }
+        
     th, td {
-        border: 1px solid red;
         text-align: center;
         padding: 20px; /* 셀 안쪽 여백 */
         word-wrap: break-word; /* 글자가 넘치면 줄바꿈 */
@@ -210,6 +213,7 @@
         border: 1px solid #c1b8a1;
         height: 1000px;
         margin: 0 auto;
+        color: #1a1a1a;
     }
     .fc-toolbar-title {
         
@@ -233,8 +237,21 @@
     .fc-button-group{
         margin-bottom: 20px;
     }
+    .fc-sticky{
+        color: #1a1a1a;
+        display: flex;
+        font-size: 14px;
+    }
+    .fc-event-time{
+        font-size: 14px;
+        color: #1a1a1a;
 
-    
+    }
+    .fc-daygrid-dot-event .fc-event-title{
+        font-size: 14px;
+        color: #1a1a1a;
+
+    }
 </style>
 <body>
     <div class="total">
@@ -247,7 +264,7 @@
                     <span>가정통신문</span><br>  
 
                 </div>
-                <span class="title_02">별처럼 빛나는 사람이 되자</span>
+                <span class="title_02">청춘의 전류, 마음을 번쩍 깨우는 스파크가 되자</span>
             </div>
             <div class="s_no">
                 <span>제2025-830호</span>
