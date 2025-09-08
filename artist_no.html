@@ -6,14 +6,14 @@
     <title>artist</title>
 </head>
 <style>
-    /*이름 폰트*/
     @font-face {
         font-family: 'JejuStoneWall';
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2') format('woff2');
         font-weight: normal;
         font-display: swap;
     }
-
+    /*이름 폰트*/
+    @import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
     *{margin:0; padding: 0;
         font-optical-sizing: auto; font-style: normal;
         box-sizing: border-box;
@@ -38,18 +38,29 @@
 
     /* 바디 스크롤 가능하게끔 */
     body::before {
-        margin: 0;
+      /*  margin: 0;
         padding: 0;
         content: "";
         position: fixed;
         top: 0; left: 0;
         width: 100%; height: 100%;
-        background-image: url('images/별작은버전.jpg') ;
+        background-image: url('images/칠판.jpg') ;
         background-size: auto;
         background-position: center; 
         background-repeat: no-repeat center center;
-        z-index: -1;
+        z-index: -1;*/
         /*  background: url('별작은버전.jpg') no-repeat center center / cover;
+        z-index: -1; /* 뒤로 보내기 */
+
+
+        margin: 0;
+       padding: 0;
+        content: "";
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-size: auto;
+        background: url('images/칠판.jpg') no-repeat top center/ cover;
         z-index: -1; /* 뒤로 보내기 */
     }
 
@@ -101,6 +112,7 @@
         font-size: 24px;
         font-weight: 400;
         font-style: normal;
+                color: rgb(250, 250, 250);
         
     }
     .name h1{
@@ -113,6 +125,7 @@
         font-weight: 500;
         font-style: normal;
         margin-top: 15px;
+        color: rgb(250, 250, 250);
     }
     .profile01 {
         display: flex;          /* 가로 정렬 */
@@ -139,7 +152,7 @@
     }
     .profile_info th,.profile_info td{
         text-align: center;
-        border:  1px solid #dcedfd;;
+        border:  1.5px solid #95ad8d;;
         color: #1a1a1a ;
     }
     .profile_info td{
@@ -158,6 +171,9 @@
     
         align-items: center;    /* 위아래 가운데 정렬 */
         padding: 30px 0px 30px 30px;
+        /*  border-bottom: 3px solid black;
+        border-left: 3px solid black;
+        border-right: 3px solid black;*/
         height: auto;
         width: 95%;    
     /*    border: 1px solid blue;  */
@@ -175,7 +191,7 @@
         height: 250px;
     }
     .inform td img{
-        border: 3px solid #dcedfd;
+        border: 2px solid #95ad8d;
         border-radius: 7px;
         height: 110%;
         margin: 0px 5px;
@@ -253,8 +269,8 @@
         transform: scale(0.95) rotate(2deg);
     }
     /* 연락처  css*/
-    .chatBtn {
-        
+   .chatBtn {
+    
         width: 200px;
         height: 250px;
         display: inline-block;
@@ -264,6 +280,7 @@
         font-weight: bold;
         border-radius: 4px;
         cursor: pointer;
+        border: none;
 
 
     /* 종이 그림자 효과 */
@@ -273,9 +290,10 @@
         transform: rotate(2deg);
         transition: transform 0.3s ease;
     }
+
     .chatBtn p{
         text-align: center;
-        margin-top: 50px;
+        margin-top: -60px;
         font-family: 'SchoolSafetyKid', sans-serif;
     }
     .chatBtn:hover {
@@ -413,11 +431,11 @@
                     </tr>
                     <tr>
                         <td class="phone">
-                            <div class="chatBtn">
-                               <p>010-2009-0526<br>
+                            <button class="chatBtn">
+                                <p>010-2009-0526<br>
                                 
-                            </p>
-                            </div>
+                                </p>
+                            </button>
                         </td>
                         <td class="photo">
                         <img src="images/지온_활동사진.png">
