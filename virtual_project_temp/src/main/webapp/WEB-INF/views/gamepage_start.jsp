@@ -9,15 +9,18 @@
     <title>test starting page</title>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="/css/gamepage.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+
     <style>
 
         /*// starting_section //*/
         /* title_box */
         .title_box {
-            
-            min-height: 610px;
+            background-color: #fafafa;
+            min-height: 550px;
             justify-content: center;
             text-align: center;
+            font-family: 'KccHanbit', sans-serif;
         }
         .title_box h3 {
             font-size:1.6rem;
@@ -26,7 +29,8 @@
 
         /* button_box */
         .button_box {
-            min-height: 410px;
+            min-height: 350px;
+            background-color: #fafafa;
         }
 
 
@@ -35,66 +39,140 @@
             display: none;
         }
         .question_box {
-            min-height: 480px;
+            min-height: 500px;
             justify-content: flex-end;
             text-align: center;
+            font-family: 'KccHanbit', sans-serif;
         }
         .question_box h4{
-            font-size:1.1rem;
+            font-size:1.0rem;
+            font-weight: normal;
             margin: 0;
         }
         .question_box h3 {
             font-size:1.6rem;
+            font-weight: normal;
             margin: 0;
         }
         .question_board {
-            border:1px solid black;
-            height:250px; width:450px; 
-            margin-bottom: 50px;
-            display:flex; flex-direction:column; align-items: center;
+            height:405px; width: 100%; 
+            margin-bottom: 80px;
+            display:flex; flex-direction:column;  justify-content: space-between; align-items: center; gap :20px;
         }
         .question_progress {
             width: 100%;
-            border:1px solid black;
-            flex: 2
+            height: 42px;
+            display:flex; flex-direction: column; justify-content: space-between; align-items: center;
         }
+        .progress_bar {
+            position: relative;
+            height: 8px;
+            min-width: 520px;
+            width: 90vw;
+            max-width: 1340px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .progress_fill {
+            position: relative;
+            height: 100%;
+            --p: 0; /* 진행률 변수 */
+            width: 100%;
+            background: linear-gradient(90deg, #3ca7ff, #ffb6f0);
+            background-size: 100% 100%;
+            clip-path: inset(0 calc((1 - var(--p))* 100%) 0 0 round 10px);
+            transition: clip-path .5s ease;   /* 애니메이션 */
+            overflow: hidden;
+            border-radius: 10px;
+            /*transition: width 0.5s ease;*/
+        }
+        /*
+        .progress_grad {
+            position: absolute;
+            inset: 0;
+            /*width: 200%; /* 그라디언트가 부드럽게 움직이도록 넓게 설정 
+            animation: gradientMove 3s linear infinite;
+            
+        }
+        */
         .question_content {
             width: 100%;
-            flex: 8;
-            border:1px solid black;
+            height: 240px;
             display:flex; flex-direction:column; justify-content: center; align-items: center;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
         /* answer_box */
         .next_box {
-            margin-top: auto;
-            margin-bottom: 170px;
+            margin-top: 50px;
+            margin-bottom: auto;
             width: fit-content;
             height: fit-content;
         }
         .next_button {
-            height: 45px; width: 120px;
+            height: 45px; width: 110px;
             font-size: 0.8rem;
+            font-weight: 400;
+            cursor: pointer;
+            border-radius: 10px;
             border: none;
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 4px 0 rgba(0,0,0,0.1);
         }
         .next_button:disabled {         /* 비활성화 스타일 */
-            background-color: lightgray;
+            box-shadow: none;
+            background-color: rgba(255, 255, 255, 0.4);
             color: gray;
             border: none;
             cursor: not-allowed;
         }
+        .next_button:not(:disabled):active {    /* 활성화됐을 때 클릭 시 효과 */
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+        }
+        
         .answer_box {
-            min-height: 540px;
+            min-height: 400px;
         }
-        .answer_box .answer1, .answer_box .answer2 {
+        .answer1, .answer2 {
             height: 70px; width: 410px;
-        }
-        .answer_box .selected {
-            background-color: #035fe0;
-            color: #fafafa;
-            border: none;
-        }
+            font-family: 'KccHanbit', sans-serif;
+            margin-top: 10px;
 
+            /* so-called 캔디 버튼 */
+            background: /*linear-gradient(145deg, #ffb6f0, #ffd166);*/
+            linear-gradient(145deg, #3ca7ff, #ffb6f0);
+            border: none;
+            border-radius: 999px;
+            padding: 14px 32px;
+            font-size: /*18px*/ 1.0rem;
+            font-weight: normal;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2), inset 0 4px 8px rgba(255,255,255,0.5);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .answer1:hover, .answer2:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.25), inset 0 4px 8px rgba(255,255,255,0.6);
+        }
+        .answer1:active, .answer2:active {
+            transform: translateY(2px);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+
+        
+        .answer_box .selected { /* 선택된 답변 스타일 */
+            transform: translateY(2px);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
         /* background_img */
         .question_img {
             /*border:1px solid black;*/
@@ -108,17 +186,17 @@
             height: 895px;
             z-index: -1;
         }
+        /*
         .background_img {
-            background: url('/images/bluestars.jpg');
-            /*
-            background-position: center;*/
+            background: #ebf8ff;
+            url('/images/bluestars.jpg');
             background-attachment: fixed;
             position: fixed;
             inset: 0;
             width: 100%; height: 100%;
             z-index: -2;
         }
-
+        */
 
         /* modal 창 */
         
@@ -178,6 +256,9 @@
         <div class="question_box box">
             <div class="question_board">
                 <div class="question_progress">
+                    <div class="progress_bar">
+                        <div class="progress_fill"><!--<div class="progress_grad"></div>--></div>
+                    </div>
                     <h4>1/3</h4>                    <!-- 임시로 3문제까지 -->
                 </div>
                 <div class="question_content">
@@ -193,12 +274,13 @@
                 <button type="button" class="answer2">혼자서 책 읽기</button>
                 <input type="hidden" name="answer2" value=""/>             <!-- DB에 저장된 답변태그2 -->
                 <div class="next_box">
-                    <button type="submit" class="next_button black" disabled>다음으로</button>
+                    <button type="submit" class="next_button" disabled>다음으로</button>
                 </div>
             </div>
         </form> 
-        <div class="question_img"></div>
-        <div class="background_img"></div>
+        <div class="question_img">
+        </div>
+        <!--<div class="background_img"></div>-->
     </section>
     <!-- /질문 섹션 -->
 
@@ -223,7 +305,7 @@
         let name = '';
         let AnswerMap = new Map(); // 질문 번호와 답변을 저장할 Map
         let test_num = 0;      // 현재 질문 번호
-
+        const total_questions = 3; // 총 질문 수 (임시로 3문제로 설정)
 
         /* 이벤트 리스너 */
 
@@ -244,7 +326,9 @@
 
             // 질문 번호 초기화
             test_num = 1;
-            $('.question_box h4').text(test_num + '/12');
+            $('.question_box h4').text(test_num + '/' + total_questions);
+            progressBarUpdate(test_num - 1); // 진행 바 업데이트 함수 호출
+            processNextQuestion(null);   // 첫 질문 처리 함수 호출 (답변 없음)
 
         }); // form submit
 
@@ -294,11 +378,14 @@
 
             // 다음 질문으로 넘어가기
             test_num = parseInt($('.question_box h4').text().split('/')[0]);
-            if(test_num < 3) {     // 임시로 3문제까지
+            if(test_num < total_questions) {     // 임시로 3문제까지
                 test_num++;
-                $('.question_box h4').text(test_num + '/3');
+                $('.question_box h4').text(test_num + '/' + total_questions);
+                progressBarUpdate(test_num - 1); // 진행 바 업데이트 함수 호출
                 processNextQuestion(selected_answer);   // 다음 질문 처리 함수 호출 (현재의 답변에 따라 다음 질문 불러오기)
             }else{
+                progressBarUpdate(total_questions); // 진행 바 100%로 업데이트
+                
                 alert('테스트가 완료되었습니다.');
                 console.log('최종 답변 맵:', AnswerMap);
                 
@@ -329,6 +416,12 @@
             let question_num = $('.question_num').val();
             let answer_tag = $(`.answer_box input[name="${selected_answer}"]`).val();
             AnswerMap.set(question_num, answer_tag);
+        }
+
+        // 진행 바 업데이트 함수
+        function progressBarUpdate(test_num) {
+            let progress_percent = test_num / total_questions;
+            document.querySelector('.progress_fill').style.setProperty('--p', progress_percent);
         }
 
         // 다음 질문 처리 함수

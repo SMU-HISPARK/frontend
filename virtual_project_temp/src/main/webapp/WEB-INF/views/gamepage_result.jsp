@@ -12,7 +12,8 @@
 
         /* result_section */
         .result_box {
-            min-height: 710px;
+            background-color: #fafafa;
+            min-height: 650px;
             justify-content: space-between;
             text-align: center;
         }
@@ -30,7 +31,8 @@
         }
 
         .button_box {
-            min-height:310px;
+            min-height:250px;
+            background-color: #fafafa;
         }
 
         /* stats_modal */
@@ -52,7 +54,7 @@
             /*display: flex; flex-direction: column; align-items: center; gap: 1.5%;*/
         }
 
-        .title_box {
+        .topbar {
             border:1px solid black;
             position:relative;
             height:10vh; width:75vh; 
@@ -60,7 +62,7 @@
             display:flex; flex-direction:column; justify-content: center; align-items: center;
             text-align: center;
         }
-        .title_box .prev {
+        .topbar .prev {
             position:absolute;
             left: 5%;
             top: 50%;
@@ -68,7 +70,7 @@
             font-size: 2rem;
             cursor: pointer;
         }
-        .title_box h3 {
+        .topbar h3 {
             font-size:1.6rem;
         }
         .stat_box {
@@ -119,7 +121,7 @@
 
     <div class="stats_modal modal">
         <div class="modal_content">
-            <div class="title_box">
+            <div class="topbar">
                 <div class="prev"><</div>
                 <h3>동아리 방문 순위</h3>
             </div>
