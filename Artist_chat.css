@@ -150,7 +150,7 @@ body, html {
     min-width: 40px;
     max-width: 380px;
     padding: 10px 12px;
-    border-radius: 13px;
+    border-radius: 15px;
     font-size: 13px;
     line-height: 1.4;
     white-space: pre-wrap;    /* 엔터/공백 유지 + 자동 줄바꿈 */
@@ -165,7 +165,7 @@ body, html {
 /* 왼쪽 채팅 (상대방) */
 .ch1 .textbox {
     background-color: #ddd;
-    border-top-left-radius: 5px;
+    border-top-left-radius: 2px;
     color: #1a1a1a;
 }
 
@@ -185,7 +185,7 @@ body, html {
 .ch2 .textbox {
     background-color: #035fe0;
     color: #fafafa;
-    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 2px;
     margin-right: 8px;
 }
 
@@ -197,14 +197,14 @@ body, html {
 
 /* 날짜 바꿈 선 */
 .date_line{
-    color: #1a1a1a;
-    margin: 7px 0px;
+    color: #444;
+    margin: 20px 0px 10px 0px;
 }
 
 .date{
     width: 100%;
     text-align: center;
-    color: #1a1a1a;
+    color: #444;
     font-size: 11px;
 }
 
