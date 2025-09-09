@@ -64,7 +64,7 @@
         .button-group .delete-button { background-color:white; color:#1a1a1a;border: 1px solid #ccc;}
         
         /* 변경된 투표 박스 스타일 */
-        .vote-options-container { width: 45%; padding: 30px; margin : 0 auto; border: none; background-color: #f7f9fc;
+        .vote-options-container { width: 840px; padding: 30px; margin : 50px auto; background-color: #f7f9fc;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; flex-direction: column; gap: 20px; }
     
         .vote-title-re { text-align: center; font-size: 1.5em; font-weight: 700; color: #2d3436; margin-bottom: 10px; padding-bottom: 20px; 
@@ -82,7 +82,7 @@
 
         /* 투표 항목 리스트 스타일 */
         .vote-options { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 15px; }
-        .vote-item { background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+        .vote-item { background-color: #ffffff; box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
         transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
         .vote-button { display: flex; flex-direction: column; width: 100%; padding: 18px 25px; font-size: 1.1em; text-align: left;
             border: none; background-color: transparent; cursor: pointer; }
@@ -120,6 +120,7 @@
         </div>
 
         <div class="view-content">
+            
             
             <div class="vote-options-container">
                 
@@ -200,7 +201,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const voteEndTimeElement = document.getElementById('voteEndTime');
             const voteEndStatusElement = document.getElementById('voteEndStatus');
-            const voteEndTime = new Date('2025-09-08T17:00:00'); // 투표 마감 시간 설정 (KST)
+            const voteEndTime = new Date('2025-09-09T11:00:00'); // 투표 마감 시간 설정 (KST)
             
             const updateTime = () => {
                 const now = new Date();
