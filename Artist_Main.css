@@ -12,9 +12,7 @@ body {
 
 
 .polaroid {
-    width: 235px;
-    border: 1px solid black;
-    box-shadow: 4px 4px 6px rgba(0,0,0,0.25);
+    width: 350px;
     transition: transform 0.3s ease;
 }
 
