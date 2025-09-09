@@ -74,7 +74,7 @@
         .vote-end-time { font-size: 17px; color: #98a5ac; text-align: center; margin-top:-20px;}
 
         /* 투표 항목 리스트 스타일 */
-        .vote-options { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 15px; }
+        .vote-options { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 15px; margin-bottom:20px;}
         .vote-item { 
             background-color: #ffffff; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
@@ -82,11 +82,14 @@
             border: 2px solid transparent;
             position: relative;
             cursor: pointer;
+            padding-bottom:10px;
+            border-radius: 20px;
         }
 
         .vote-item.selected {
             border-color: #035fe0;
             box-shadow: 0 4px 10px rgba(3, 95, 224, 0.2);
+            
         }
 
         .vote-button { 
@@ -101,8 +104,8 @@
             cursor: pointer;
         }
         .vote-text-line { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 8px; }
-        .vote-option-name { font-weight: 600; color: #2d3436; }
-        .vote-count-info { font-size: 0.95em; color: #636e72; }
+        .vote-option-name {padding-left:10px; font-weight: 700; color: #2d3436; }
+        .vote-count-info { padding-right:10px; font-size: 0.95em; color: #636e72; }
         .vote-count-info .percent-value { font-weight: bold; color: #e84393; }
 
         /* 투표율 진행바 스타일 */
@@ -127,6 +130,7 @@
             background-color: #035fe0;
             border: none;
             cursor: pointer;
+            border-radius: 10px;
             transition: background-color 0.3s ease-in-out;
             box-sizing: border-box; /* 추가: 패딩과 보더를 너비에 포함 */
         }
@@ -138,7 +142,7 @@
             font-size: 1.1em;
             font-weight: bold;
             text-align: center;
-            border: 1px solid #ddd;
+            border-radius: 10px;
             box-sizing: border-box; /* 추가: 패딩과 보더를 너비에 포함 */
         }
         
@@ -155,6 +159,11 @@
         }
 
         #voteActionArea { height: 60px;}
+
+
+
+        /* ??  */
+        .location ul{display:flex; justify-content:right; margin-right:10px;}
     </style>
 </head>
 <body>
