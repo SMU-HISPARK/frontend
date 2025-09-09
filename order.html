@@ -6,6 +6,7 @@
     <title>주문/결제</title>
     <link rel="stylesheet" href="css/order.css" />
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 </head>
 <body>
     <div class="mainBox">
@@ -13,10 +14,13 @@
             
             <h1>SPARK SHOP</h1>
             <div class="hMenu hLeft">
-                <a onclick="historyBackBtn()"><img src="images/left.png" style="width:28px;" /></a>
+                <a href="javascript:void(0);" id="backBtn"><img src="images/left.png" style="width:28px;" /></a>
             </div>
             <div class="hMenu hRight">
-                <a href="cart.html"><img src="images/cart.png" style="width:29px;" /></a>
+                <a href="cart.html" class="cartWrapper">
+                    <img src="images/cart.png" style="width:29px;" />
+                    <span class="cartBadge">3</span>
+                </a>
                 <a href="/"><img src="images/user.png" style="width:28px;" /></a>
             </div>
         </div>
@@ -26,7 +30,7 @@
         </div>
 
         <div class="contentWrap">
-            <form action="order_finish.html" name="orderFrm" method="post">
+            <form action="order_finish.html" class="orderFrm" method="get">  <!--post로바꾸기-->
                 <div class="addressBox">
                     <details open>
                         <summary>배송지</summary>
@@ -215,10 +219,10 @@
                                 <div class="creditInputDiv">
                                     결제 금액 : <input type="text" id="paidCreditValue" value="0" min="0" />
                                     <button type="button">적용</button>
-                                    <button type="button" class=" payAll">전액 사용</button>
+                                    <button type="button" id="payAll">전액 사용</button>
                                 </div>
                                 <div>
-                                    결제 후 잔액 : 954,400 P
+                                    결제 후 잔액 : <span>954,400</span> P
                                 </div>
                             </div>
                         </div>
@@ -235,15 +239,15 @@
                     </div>
                     <div class="paymentTerms-check">
                         <input type="checkbox" id="shoppingterms"/>
-                        <label for="shoppingterms" id="shoppingterms-details">[필수] 쇼핑몰 이용약관 동의</label>
+                        <label id="shoppingterms-details">[필수] 쇼핑몰 이용약관 동의</label>
                     </div>
                     <div class="paymentTerms-check">
                         <input type="checkbox" id="personalinfo"/>
-                        <label for="personalinfo" id="personalinfo-details">[필수] 개인정보 수집 및 이용 동의</label>
+                        <label id="personalinfo-details">[필수] 개인정보 수집 및 이용 동의</label>
                     </div>
                     <div class="paymentTerms-check">
                         <input type="checkbox" id="thirdparty"/>
-                        <label for="thirdparty" id="thirdparty-details">[필수] 개인정보의 제3자 제공(업무제휴를 위한 제휴사 제공)</label>
+                        <label id="thirdparty-details">[필수] 개인정보의 제3자 제공(업무제휴를 위한 제휴사 제공)</label>
                     </div>
                 </div>
                 
@@ -251,79 +255,13 @@
         </div>
         
         <div class="payButtonBox"> 
-            <button type="button" onclick="confirmBtn()" class="payButton">45,600원 결제하기</button>
+            <button type="button" id="payBtn">45,600원 결제하기</button>
             <!-- 결제 클릭했는데 적립금 부족시 적립금이 부족합니다 alert -->
         </div>
     </div>
-    
-    <script>
-        $(document).on("click","#shoppingterms-details",function(){
-            window.open("shoppingterms.html", "shoppingterms", "width=400, height=600, left=100, top=50");
-        });//shoppingterms
 
-        $(document).on("click","#personalinfo-details",function(){
-            window.open("personalinfo.html", "personalinfo", "width=400, height=600, left=120, top=70");
-        });//personalinfo
-
-        $(document).on("click","#thirdparty-details",function(){
-            window.open("thirdparty.html", "thirdparty", "width=400, height=600, left=140, top=90");
-        });//thirdparty
-
-
-        function historyBackBtn(){
-            history.back();
-        }
-
-
-        function confirmBtn(){
-            alert("결제 진행");
-            orderFrm.submit();
-
-
-        }
-
-        $(document).ready(function(){
-            $('.deliveryMessage').change(function() {
-                if ($(this).val() == "selfText") {
-                    $("#deliveryText").css("display", "block");
-                } else {
-                    $("#deliveryText").css("display", "none");
-                }
-            }); // 배송메모
-
-            $("input:radio[name=paymethod]").change(function(){
-                if(this.value == 'creditcard'){
-                    $(".paymethod-detail").css("display","none");
-                    $("#creditcard-detail").css("display","block");
-                }else if(this.value == 'transfer'){
-                    $(".paymethod-detail").css("display","none");
-                    $("#transfer-detail").css("display","block");
-                }else if(this.value == 'virtualAccount'){
-                    $(".paymethod-detail").css("display","none");
-                    $("#virtualAccount-detail").css("display","block");
-                }else if(this.value == 'paidCredit'){
-                    $(".paymethod-detail").css("display","none");
-                    $("#paidCredit-detail").css("display","block");
-                }
-            }); //결제수단
-
-            // 모두 동의 체크박스 클릭 시
-            $('#allconfirm').change(function() {
-                var isChecked = $(this).is(':checked');
-                $('#shoppingterms, #personalinfo, #thirdparty').prop('checked', isChecked);
-            });
-            
-            // 개별 체크박스 클릭 시 모두 동의 해제
-            $('#shoppingterms, #personalinfo, #thirdparty').change(function() {
-                var totalCheckboxes = $('#shoppingterms, #personalinfo, #thirdparty').length;
-                var checkedCheckboxes = $('#shoppingterms:checked, #personalinfo:checked, #thirdparty:checked').length;
-                
-                $('#allconfirm').prop('checked', totalCheckboxes === checkedCheckboxes);
-            });//allconfirm
-
-        });//jquery
-    </script>
     
 </body>
 </html>
 
+<script type="text/javascript" src="js/order.js"></script>

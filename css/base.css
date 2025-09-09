@@ -7,10 +7,8 @@
 
 
 
-*{margin: 0; padding:0;
-}
+*{margin: 0; padding:0;}
 .wrap{
-    padding-bottom : 15px;
     margin: 0 auto;
 }
 #header{
@@ -48,10 +46,44 @@
     width: 60px;
     height: 60px;
 }
-#header #snbBox #snb{position: absolute; top: 0; right: 0; margin:0 27px 0 0;}
-#header #snbBox #snb ul{width:100%; }
-#header #snbBox #snb ul li{float:left; height:25px; line-height:25px; padding:8px 2px 0 18px;}
+#header #snbBox #snb{position: absolute; top: 0; right: 0; margin:0 50px 0 0;}
+#header #snbBox #snb ul{width:100%;}
+#header #snbBox #snb ul li{float:left; padding:8px 2px 0 18px;}
 #header #snbBox #snb ul li a{text-decoration : none; color:#888; font-size:11px; font-weight:600;}
+
+#header .hMenu{position:absolute; margin-top: -14px;}
+
+#header .hRight{
+    top: 75%;
+    right:50px;
+    display: flex;
+    gap:22px;
+    justify-content:end;
+}
+
+
+#header .cartWrapper{
+    position: relative;
+    display: inline-block;
+}
+
+#header .cartBadge{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(100%, 0%);
+    background-color: red;
+    color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 18px;
+}
+
+
 
 #footerWrap {
     width: 100%;
