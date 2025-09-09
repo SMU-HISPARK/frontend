@@ -32,17 +32,19 @@ table, tr{
 
 div {
     box-sizing: border-box;
+
 }
 
 .mainBox {
-    width: 1230px;
+    max-width: 1230px;
     height: 100%;
     margin: 0 auto;
+    overflow:hidden;
 }
 
 .title {
     font-family: 'Pretendard';
-    width: 1230px;
+    max-width: 1230px;
     height: 170px;
     margin: 0 auto;
     text-align: center;
@@ -64,6 +66,7 @@ div {
 .location ul{
     display: flex;
     justify-content: right;
+    margin-right:10px;
 }
 
 .location li{
@@ -83,7 +86,7 @@ div {
 
 
 .orderStep {
-    width: 1230px;
+    max-width: 1230px;
     padding-bottom: 20px;
     margin-bottom: 30px;
     border-bottom: 1px solid #1a1a1a;
@@ -114,6 +117,7 @@ div {
     gap: 50px;
 }
 
+
 .basketbox {
     flex: 1;
 }
@@ -143,7 +147,8 @@ div {
 
 .description{
     vertical-align: top;
-    width:600px;
+    max-width:600px;
+    min-width:310px;
     padding-left:20px;
 }
 
@@ -178,6 +183,7 @@ div {
 
 
 .pricesum {
+    margin-top: 20px; width: 100%;
     background-color: #f9f9f9;
     font-size: 14px;
 }
@@ -188,9 +194,8 @@ div {
 
 .pricecount {
     width: 360px;
-    height: 200px;
     margin-bottom:10px;
-    padding: 30px;
+    padding: 30px 35px;
     border: 2px solid #1a1a1a;
 }
 
@@ -269,10 +274,11 @@ input[type="checkbox"]:checked{
 }
 
 .action-buttons {
-    margin-top: 20px;
+    margin: 20px 0;
     text-align: center;
     display:flex;
     gap: 10px;
+    justify-content: end;
 }
 
 .btn {
@@ -325,4 +331,64 @@ input[type="checkbox"]:checked{
     color: #666;
     font-size: 18px;
     margin: 20px 0;
+}
+
+
+@media screen and (max-width: 1280px) {
+    .product-container {
+        margin-left:5px;
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 885px) {
+    .product-container .product, .optionselect,
+    .countselect,.productprice{
+        padding-right:20px
+    }
+    
+    
+    
+    
+    .pricebasketbox {
+        display: inline-block;
+        width:100%;
+    }
+    
+    .basket{
+        width:100%;
+    }
+    
+    .pricesum{
+        display: none;
+    }
+    
+    .pricecount {
+        width: 100%;
+        border:none;
+        background-color: #fafafa;
+        padding:30px 20px;
+        
+    }
+    
+    .productprice-total{
+        border-top:1px solid #ddd;
+        font-size:20px;
+    }
+    
+    
+    .order-btn{
+        width:100%;
+    }
+    
+    .btn{
+        width:100%
+    }
+
+    
+    
+    
 }

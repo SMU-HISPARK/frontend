@@ -14,7 +14,6 @@
     margin: 0 auto;
 }
 #header{
-    width: 100vw;
     margin-left: calc(50% - 50vw);
     border-bottom : 0.5px solid rgb(232, 232, 232);
     height:150px;
@@ -45,7 +44,7 @@
 }
 
 #header #snbBox h1 img{
-    margin-right:10px;
+    margin-left:10px;
     width: 60px;
     height: 60px;
 }
@@ -99,6 +98,7 @@
 .social-links {
     display: flex;
     gap: 15px;
+    margin:0 20px;
 }
 
 .social-links a {
