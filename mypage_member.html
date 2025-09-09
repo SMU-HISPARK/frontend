@@ -117,6 +117,9 @@
             <li>
                 <a href = "mypage_shop.html">주문내역</a>                
             </li>
+            <li>
+                <a href = "mypage_point.html">적립금</a>                
+            </li>
         </ul>
         
         <div class="content">
@@ -157,7 +160,7 @@
                     <label></label>
                     <div>
                         <button class="btn upBtn" id="editBtn">정보 수정</button>
-                        <button class="btn pwBtn" onclick="location.href='mypw.html'">비밀번호 변경</button>
+                        <button class="btn pwBtn" onclick="openPopup()">비밀번호 변경</button>
                     </div>
                 </div>
             </div>
@@ -167,10 +170,23 @@
             
     </div>
 
+    <div class = "blank" style = "height : 100px;">
+
+    </div>
     <div id="footer-container">
         
     </div>
     <script>
+
+        function openPopup(){
+            window.open(
+                "mypw.html",   // 열 페이지 (같은 폴더에 popup.html 있다고 가정)
+                "pwupdate",  // 창 이름
+                "width=550,height=650,top=100,left=200,resizable=no,scrollbars=yes"
+            );
+        }
+
+
         // 메뉴 클릭 처리
         document.addEventListener('DOMContentLoaded', function() {
             const menuItems = document.querySelectorAll('.menu li');

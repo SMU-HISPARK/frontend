@@ -8,10 +8,81 @@
     <title>주문내역</title>
     <style>
 
+        /* 주문상품 리스트 */
+        .orderProduct{
+            width:100%;
+            background-color: white;
+        }
+
+        .orderProduct{
+            margin-top:20px;
+        }
+
+
+        .addressBox .label{
+            font-size: 14px;
+            vertical-align: top;
+            padding-top: 18px;
+        }
+
+        /* 배송지 필수정보, 주문갯수  */
+        .label .required, .orderProduct span{
+            color:#035fe0;
+        }
+
+        
+        .orderProduct_one {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px 0;
+            height:130px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .orderProduct_one:last-child {
+            border-bottom: none;
+        }
+
+        .orderProduct_one img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .productInfo {
+            flex: 1;
+        }
+
+        .productName {
+            color:#666;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .productOption {
+            font-size: 12px;
+            color: #a0a0a0;
+            margin-bottom: 3px;
+        }
+
+        .productQty {
+            font-size: 12px;
+            color: #a0a0a0;
+            margin-bottom: 6px;
+        }
+
+        .productPrice {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
         /* 버튼 */
         .btn {
             background-color: #1a1a1a;
-            border: none;
+            border: 1px solid #ccc;
             color: #fff;
             padding: 10px;
             cursor: pointer;
@@ -20,7 +91,32 @@
             margin-right: 10px;
         }
 
+        .order-detail-actions {
+            display: flex;
+            justify-content: center;  /* 가운데 정렬 */
+            gap: 10px;                /* 버튼 사이 간격 */
+            margin-top: 20px;
+        }
 
+        /* 버튼 공통 */
+        .update, .cancel {
+            display: inline-block;  /* block 대신 inline-block */
+            margin: 0;              /* margin auto 제거 */
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .update {
+            background: #1a1a1a;
+            color: #fff;
+            border: 1px solid #ccc;
+        }
+
+        .cancel {
+            background: #fff;
+            color: #333;
+            border: 1px solid #ccc;
+        }
         .btn-small {
             padding: 6px 12px;
             font-size: 12px;
@@ -86,6 +182,11 @@
 
         .fin{
             background : #666;
+            color : white;
+        }
+
+        .can{
+            background : red;
             color : white;
         }
 
@@ -200,8 +301,11 @@
             <li>
                 <a href = "mypage_community.html">게시글 관리</a>
             </li>
-            <li class = "selected">
+            <li  class = "selected">
                 <a href = "mypage_shop.html">주문내역</a>                
+            </li>
+            <li>
+                <a href = "mypage_point.html">적립금</a>                
             </li>
         </ul>
         
@@ -228,8 +332,9 @@
                                 <span>25,000원</span>
                             </div>
                             <div class="order-field">
-                                <label>배송상태</label>
+                                <label>주문상태</label>
                                 <span class="status-badge fin">배송완료</span>
+                                <span class="status-badge can">주문취소</span>
                             </div>
                         </div>
                         <div class="order-actions">
@@ -257,7 +362,7 @@
                                 <span>45,000원</span>
                             </div>
                             <div class="order-field">
-                                <label>배송상태</label>
+                                <label>주문상태</label>
                                 <span class="status-badge ing">배송중</span>
                             </div>
                         </div>
@@ -286,13 +391,13 @@
                                 <span>35,000원</span>
                             </div>
                             <div class="order-field">
-                                <label>배송상태</label>
+                                <label>주문상태</label>
                                 <span class="status-badge buy">결제완료</span>
                             </div>
                         </div>
                         <div class="order-actions">
                             <button class="btn btn-small" onclick="showOrderDetail('ORD-2025-003')">주문 상세</button>
-                            <button class="btn btn-small" onclick="cancelOrder('ORD-2025-003')">주문 취소</button>
+                            <button class="btn btn-small" onclick="showDeliveryTracking('ORD-2025-003')">배송 조회</button>
                         </div>
                     </div>
                 </div>
@@ -306,6 +411,11 @@
                 
                 <div id="order-detail-content">
                     <!-- 주문 상세 내용이 여기에 동적으로 표시됩니다 -->
+                </div>
+                <!-- 버튼 영역 -->
+                <div class="order-detail-actions">
+                    <button onclick="openPopup()" class = "btn update">주문수정</button>
+                    <button onclick = "cancelBtn('ORD-2025-003')" class = "cancel">주문취소</button>
                 </div>
             </div>
             
@@ -327,6 +437,42 @@
     </div>
 
     <script>
+
+        function openPopup(){
+            window.open(
+                "mypage_shopupdate.html",   // 열 페이지 (같은 폴더에 popup.html 있다고 가정)
+                "infoupdate",  // 창 이름
+                "width=800,height=900,top=100,left=200,resizable=no,scrollbars=yes"
+            );
+        }
+
+        function cancelBtn(orderNum){
+            if(confirm("주문을 취소하시겠습니까?")){
+                // 주문 항목 찾기
+                const orderElement = document.querySelector(`[data-order-id="${orderNum}"]`);
+                
+                if(orderElement) {
+                    // 삭제 애니메이션 효과
+                    orderElement.classList.add('removing');
+                    
+                    // 애니메이션 완료 후 요소 제거
+                    setTimeout(() => {
+                        orderElement.remove();
+                        alert(`${orderNum} 주문이 취소되었습니다.`);
+                        
+                        // 주문 상세 페이지에 있다면 목록으로 돌아가기
+                        if(document.getElementById('order-detail').classList.contains('active')) {
+                            showOrdersList();
+                        }
+                    }, 300);
+                    
+                    // 주문 데이터에서도 제거 (실제 서버 연동 시에는 서버로 요청)
+                    delete orderData[orderNum];
+                    delete trackingData[orderNum];
+                }
+            }
+        }
+
         function showSection(sectionName) {
             // 모든 섹션 숨기기
             const sections = document.querySelectorAll('.section');
@@ -430,7 +576,44 @@
                             <span>${order.totalPrice}</span>
                         </div>
                     </div>
-                </div>
+                <div class="orderProduct">
+                <details open>
+                    <summary>상품상세 <span>(3)</span></summary>
+                    <!-- 상품 하나 -->
+                    <div class="orderProduct_one">
+                        <img src="productimage/photocard.png" alt="상품1" />
+                        <div class="productInfo">
+                            <p class="productName">HI-SRARK PHOTOCARD SET ver. 1 / 2</p>
+                            <p class="productOption">옵션: ver.1</p>
+                            <p class="productQty">수량: 1</p>
+                            <p class="productPrice">₩5,000</p>
+                        </div>
+                    </div>
+
+                    <!-- 반복될 부분 -->
+                    <div class="orderProduct_one">
+                        <img src="productimage/acrylic_keyring_YUHYUN.png" alt="상품2" />
+                        <div class="productInfo">
+                            <p class="productName">YUHYUN ACRYLIC KEYRING</p>
+                            <p class="productOption">옵션: YUHYUN</p>
+                            <p class="productQty">수량: 2</p>
+                            <p class="productPrice">₩24,000</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 반복될 부분 -->
+                    <div class="orderProduct_one">
+                        <img src="productimage/acrylic_keyring_JEONGHUN.png" alt="상품3" />
+                        <div class="productInfo">
+                            <p class="productName">JEONGHUN ACRYLIC KEYRING</p>
+                            <p class="productOption">옵션: JEONGHUN</p>
+                            <p class="productQty">수량: 1</p>
+                            <p class="productPrice">₩12,000</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            </div>
                 
                 <div class="detail-section">
                     <div class = "subtitle">결제 정보</div>
@@ -559,13 +742,6 @@
             showSection('delivery-tracking');
         }
         
-        function cancelOrder(orderNum) {
-            if (confirm('정말로 이 주문을 취소하시겠습니까?')) {
-                alert(`주문 ${orderNum}이 취소되었습니다.`);
-                // 주문 취소 로직
-                location.reload(); // 페이지 새로고침으로 상태 업데이트 시뮬레이션
-            }
-        }
     </script>
 </body>
 </html>
