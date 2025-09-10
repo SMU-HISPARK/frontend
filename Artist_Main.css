@@ -1,3 +1,4 @@
+/* 배경 */
 body {
     margin: 0;
     padding: 0;
@@ -10,18 +11,75 @@ body {
     z-index: -1;
 }
 
-
-.polaroid {
-    width: 390px;
+/* 폴라 + 스티커 */
+.member {
+    position: relative;
+    width: 350px;
+    height: fit-content;
     transition: transform 0.3s ease;
 }
 
-.polaroid:hover {
+/* 폴라 + 스티커 애니메이션 */
+.member:hover{
     transform: rotate(0deg) scale(1.05);
+
 }
-.polaroid:active {
+.member:active {
     transform: scale(0.95) rotate(2deg);
 }
+
+/* 폴라 */
+.polaroid {
+    width: 100%;
+    display: block;
+}
+
+/* 스티커 */
+.object {
+    position: absolute;
+    z-index: 1;
+}
+
+/* 유현 스티커 */
+.yh{
+    width: 140px;
+    left: 200px;
+    bottom: 0px;
+}
+
+/* 승민 스티커 */
+.sm{
+    width: 155px;
+    left: 0px;
+    bottom: 0px;
+    transform: rotate(-25deg);
+}
+
+/* 경 스티커 */
+.g{
+    width: 220px;
+    left: -50px;
+    bottom: -15px;
+    transform: rotate(-40deg);
+}
+
+/* 지온 스티커 */
+.jo{
+    width: 120px;
+    left: 100px;
+    bottom: -10px;
+    transform: rotate(20deg);
+}
+
+/* 정훈 스티커 */
+.jh{
+    width: 130px;
+    left: 200px;
+    bottom: 0px;
+    transform: rotate(-40deg);
+}
+
+/* 윗줄 아랫줄 div  */
 
 .div_01, .div_02 {
     display: flex;
@@ -29,9 +87,10 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 20px;
+    gap: 30px;
 }
 
+/* 전체 div */
 .main_div {
     display: flex;
     flex-direction: column;
