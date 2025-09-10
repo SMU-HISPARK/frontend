@@ -40,9 +40,8 @@
 .product_img {
     /* border: 1px solid black; */
     margin-bottom: 10px;
-    padding: 40px;
+    padding: 10px;
     height: 300px;
-    background-color: #fafafa;
 }
 .product_img img {
     width:100%;
